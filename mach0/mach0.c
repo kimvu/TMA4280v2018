@@ -8,7 +8,7 @@ double arctan(int n, double x)
   double sum = 0;
 
   for (double i = 1; i <= n; i++){
-    sum += pow(-1, i-1)*(pow(x, 2*i-1)/(2*1-1));
+    sum += pow(-1, i-1)*(pow(x, 2*i-1)/(2*i-1));
   }
 
   return sum;

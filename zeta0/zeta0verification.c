@@ -14,9 +14,10 @@ int verification_zeta0()
     FILE *f = fopen("verification_results.txt", "w");
 
     for (int i = 1; i <= 24; i++){
-      printf("%f\n", errors[i-1]);
-      fprintf(f, "%f\n", errors[i-1]);
+      printf("%e\n", errors[i-1]);
+      fprintf(f, "%e\n", errors[i-1]);
     }
+    return 0;
 
 }
 
