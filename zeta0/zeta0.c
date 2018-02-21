@@ -1,9 +1,9 @@
-#include "zeta0.h"
-
-#include <stdio.h>
 #include <math.h>
+#include "zeta0.h"
+#include <stdio.h>
 
-void zeta_function(int n)
+
+double zeta_function(int n)
 {
   double sum = 0;
 
