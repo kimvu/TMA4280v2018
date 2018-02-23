@@ -1,0 +1,42 @@
+#include <math.h>
+#include "zeta0.h"
+#include <stdio.h>
+#include <mpi.h>
+
+
+double zeta1_function(int n, int mpi_size, int mpi_rank)
+{
+  // Number of iterations
+  int iterations = n / mpi_size + 1;
+
+  // Initializing vectirs
+  double *vectors;
+
+  // Calculating
+  if(mpi_rank == 0){
+      // Allocating space
+      vectors = calloc((iterations * mpi_size) + mpi_size, sizeof(double));
+      for (int i=1; i<=n; i++) {
+          vectors[i-1] = 1.0/((double)i*(double)i);
+      }
+  }
+  double *local_values = calloc(iterations, sizeof(double));
+  // Partitions the array
+  MPI_Scatter(vectors, iterations, MPI_DOUBLE, local_values, iterations, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+
+  // calculate local sum and reduce them to mpi_rank 0
+  double values_sum = 0.0;
+  for (int i=0; i<iterations; i++) {
+      values_sum += local_values[i];
+  }
+
+  double the_pi = 0.0;
+  MPI_Reduce(&values_sum, &the_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+  // free memory
+  if(mpi_rank == 0){
+      free (vectors);
+  }
+  free(local_values);
+
+  return sqrt(sum*6);
+}

@@ -7,7 +7,7 @@ int test_mach0()
 {
     double results = mach_function(3);
     printf("Pi is approximately: %f\n", results);
-    double expected_value = 3.060;
+    double expected_value = 3.141;
 
     double difference = results - expected_value;
     if (fabs(difference) > 0.001){
