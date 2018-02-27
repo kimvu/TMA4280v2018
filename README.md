@@ -1,2 +1,3 @@
-Hi
-Moren din, bare kødda
+##TMA4280 - Project 1##
+
+Mii Erik Samyo HaugÃ¥rd and Kim Long Vu
