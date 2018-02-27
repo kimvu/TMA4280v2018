@@ -1,7 +1,7 @@
 
 # This Makefile is still simple and the compilations lines are just duplicated.
 # This is suboptimal but good enough for this case.
-CC=mpicc
+CC=gcc
 TARGET=mach0
 SRC=mach0.c
 
