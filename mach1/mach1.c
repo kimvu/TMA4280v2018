@@ -1,7 +1,8 @@
-#include "mach0.h"
-
+#include "mach1.h"
 #include <stdio.h>
 #include <math.h>
+#include <mpi.h>
+#include <stdlib.h>
 
 double arctan(int n, double x)
 {
@@ -14,7 +15,7 @@ double arctan(int n, double x)
   return sum;
 }
 
-double mach_function(int n, int mpi_size, int mpi_rank){
+double mach1_function(int n, int mpi_size, int mpi_rank){
 
   // Number of iterations
   int iterations = n / mpi_size + 1;
@@ -53,5 +54,5 @@ double mach_function(int n, int mpi_size, int mpi_rank){
   }
   free(local_values);
 
-  return sum;
+  return the_pi;
 }

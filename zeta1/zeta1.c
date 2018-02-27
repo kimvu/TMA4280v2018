@@ -2,6 +2,7 @@
 #include "zeta1.h"
 #include <stdio.h>
 #include <mpi.h>
+#include <stdlib.h>
 
 
 double zeta1_function(int n, int mpi_size, int mpi_rank)
@@ -38,5 +39,5 @@ double zeta1_function(int n, int mpi_size, int mpi_rank)
   }
   free(local_values);
 
-  return sqrt(sum*6);
+  return sqrt(the_pi*6);
 }
