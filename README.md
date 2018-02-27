@@ -1,3 +1,3 @@
-##TMA4280 - Project 1##
+Markup: # TMA4280 - Project 1 #
 
 Mii Erik Samyo Haugård and Kim Long Vu
