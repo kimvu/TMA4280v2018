@@ -1,7 +1,7 @@
 #include <math.h>
 #include "zeta1.h"
 #include <stdio.h>
-#include <mpi.h>
+#include "mpi.h"
 #include <stdlib.h>
 
 

@@ -2,7 +2,7 @@
 #include <assert.h>
 #include "zeta1.h"
 #include <math.h>
-#include <mpi.h>
+#include "mpi.h"
 #define M_PI 3.14159265358979323846
 
 int verification_zeta1()
@@ -12,17 +12,19 @@ int verification_zeta1()
   MPI_Comm_size(MPI_COMM_WORLD, &mpi_size);
   MPI_Comm_rank(MPI_COMM_WORLD, &mpi_rank);
 
-  double errors[24];
-  for (int i = 1; i <= 24; i++){
-    errors[i-1] = (fabs(M_PI - zeta1_function(pow(2, i), mpi_size, mpi_rank)));
-  }
-
   FILE *f = fopen("results/verification_results.txt", "w");
-
   for (int i = 1; i <= 24; i++){
-    printf("%e\n", errors[i-1]);
-    fprintf(f, "%e\n", errors[i-1]);
+      double time1 = MPI_Wtime();
+      double zeta = zeta1_function(pow(2,i), mpi_size, mpi_rank);
+      double time2 = MPI_Wtime();
+
+      double time = time2 - time1;
+      double error = (fabs(M_PI - zeta));
+      fprintf(f, "Error: %e - Time: %e\n", error, time);
+      printf("Error: %e - Time: %e\n", error, time);
+
   }
+
   MPI_Finalize();
 
   return 0;

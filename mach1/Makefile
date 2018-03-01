@@ -15,4 +15,4 @@ clean:
 	rm -f *.o $(TARGET)
 
 vtest: mach1verification
-	./mach1verification
+	mpirun -np 2 ./mach1verification
