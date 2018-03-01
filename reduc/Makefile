@@ -11,4 +11,4 @@ clean:
 	-rm -f ${TARGETS}
 
 run:
-	mpirun -np ${NP} zetareduc 16384
+	mpirun -np ${NP} zetareduc 42

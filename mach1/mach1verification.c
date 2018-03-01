@@ -16,7 +16,7 @@ int verification_mach1()
 
     FILE *f = fopen("verification_results.txt", "w");
 
-    for (int i = 1; i <= 12; i++){
+    for (int i = 1; i <= 24; i++){
         double time1 = MPI_Wtime();
         double mach = mach1_function(pow(2, i), mpi_size, mpi_rank);
         double time2 = MPI_Wtime();
