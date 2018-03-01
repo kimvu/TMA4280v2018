@@ -11,7 +11,7 @@ int verification_zeta0()
       errors[i-1] = (fabs(M_PI - zeta_function(pow(2, i))));
     }
 
-    FILE *f = fopen("results/verification_results.txt", "w");
+    FILE *f = fopen("verification_results.txt", "w");
 
     for (int i = 1; i <= 24; i++){
       printf("%e\n", errors[i-1]);

@@ -12,7 +12,7 @@ int verification_zeta1()
   MPI_Comm_size(MPI_COMM_WORLD, &mpi_size);
   MPI_Comm_rank(MPI_COMM_WORLD, &mpi_rank);
 
-  FILE *f = fopen("results/verification_results.txt", "w");
+  FILE *f = fopen("verification_results.txt", "w");
   for (int i = 1; i <= 24; i++){
       double time1 = MPI_Wtime();
       double zeta = zeta1_function(pow(2,i), mpi_size, mpi_rank);

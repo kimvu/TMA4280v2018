@@ -11,13 +11,12 @@ int verification_mach0()
       errors[i-1] = (fabs(M_PI - mach_function(pow(2, i))));
     }
 
-    FILE *f = fopen("results/verification_results.txt", "w");
+    FILE *f = fopen("verification_results.txt", "w");
 
     for (int i = 1; i <= 24; i++){
       printf("%e\n", errors[i-1]);
       fprintf(f, "%e\n", errors[i-1]);
     }
-
     return 0;
 }
 
