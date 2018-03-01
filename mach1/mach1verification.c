@@ -12,15 +12,18 @@ int verification_mach1()
     MPI_Comm_size(MPI_COMM_WORLD, &mpi_size);
     MPI_Comm_rank(MPI_COMM_WORLD, &mpi_rank);
 
+    assert(ceil(log2(mpi_size)) == floor(log2(mpi_size)));
+
     FILE *f = fopen("verification_results.txt", "w");
-    double errors[24];
-    for (int i = 1; i <= 24; i++){
+
+    for (int i = 1; i <= 12; i++){
         double time1 = MPI_Wtime();
         double mach = mach1_function(pow(2, i), mpi_size, mpi_rank);
         double time2 = MPI_Wtime();
 
-        double time = time2 - time1;
         double error = fabs(M_PI - mach);
+        double time = time2 - time1;
+
         fprintf(f, "Error: %e - Time: %e\n", error, time);
         printf("Error: %e - Time: %e\n", error, time);
     }

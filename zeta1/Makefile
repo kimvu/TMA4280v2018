@@ -15,4 +15,4 @@ clean:
 	rm -f *.o $(TARGET)
 
 vtest: zeta1verification
-	mpirun -np 2 ./zeta1verification
+	mpirun -np 8 ./zeta1verification

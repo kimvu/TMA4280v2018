@@ -13,7 +13,7 @@ int verification_mach0()
 
     FILE *f = fopen("verification_results.txt", "w");
 
-    for (int i = 1; i <= 24; i++){
+    for (int i = 1; i <= 12; i++){
       printf("%e\n", errors[i-1]);
       fprintf(f, "%e\n", errors[i-1]);
     }
