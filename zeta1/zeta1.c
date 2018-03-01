@@ -31,13 +31,13 @@ double zeta1_function(int n, int mpi_size, int mpi_rank)
       values_sum += local_values[i];
   }
 
-  double the_pi = 0.0;
-  MPI_Reduce(&values_sum, &the_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+  double sum = 0.0;
+  MPI_Reduce(&values_sum, &sum, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
   // Freeing memory
   if(mpi_rank == 0){
       free (vectors);
   }
   free(local_values);
 
-  return sqrt(the_pi*6);
+  return sqrt(sum*6);
 }
