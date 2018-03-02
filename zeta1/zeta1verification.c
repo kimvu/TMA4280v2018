@@ -12,9 +12,7 @@ int verification_zeta1()
   MPI_Comm_size(MPI_COMM_WORLD, &mpi_size);
   MPI_Comm_rank(MPI_COMM_WORLD, &mpi_rank);
 
-    printf("mpisize: %d\n", mpi_size);
   assert(ceil(log2(mpi_size)) == floor(log2(mpi_size)));
-
 
   FILE *f = fopen("verification_results.txt", "w");
   for (int i = 1; i <= 24; i++){
@@ -24,8 +22,10 @@ int verification_zeta1()
 
       double time = time2 - time1;
       double error = (fabs(M_PI - zeta));
+      if(mpi_rank == 0){
       fprintf(f, "Error: %e - Time: %e\n", error, time);
       printf("Error: %e - Time: %e\n", error, time);
+      }
 
   }
 
@@ -40,4 +40,3 @@ int main(int argc, char *argv[])
     ret |= verification_zeta1();
     return ret;
 }
-

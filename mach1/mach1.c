@@ -4,21 +4,21 @@
 #include <mpi.h>
 #include <stdlib.h>
 
-double arctan(int n, double x)
+void arctan(int n, double *vectors)
 {
   double sum = 0;
 
-  for (double i = 1; i <= n; i++){
-    sum += pow(-1, i-1)*(pow(x, 2*i-1)/(2*i-1));
+  for (int i = 1; i <= n; i++){
+    double term1 = pow(-1, i-1)*(pow((double)0.2, 2*i-1)/(2*i-1));
+    double term2 = pow(-1, i-1)*(pow((double)1/239, 2*i-1)/(2*i-1));
+    vectors[i] = 16*term1 - 4*term2;
   }
-
-  return sum;
 }
 
 double mach1_function(int n, int mpi_size, int mpi_rank){
 
   // Number of iterations
-  int iterations = n / mpi_size + 1;
+  int iterations = n / mpi_size;
 
   // Initializing vectors
   double *vectors;
@@ -27,12 +27,7 @@ double mach1_function(int n, int mpi_size, int mpi_rank){
   if(mpi_rank == 0){
       // Allocating space
       vectors = calloc((iterations * mpi_size) + mpi_size, sizeof(double));
-      for (int i=1; i<=n; i++) {
-        double first_term = 16*arctan(n, (double)0.2);
-        double second_term = 4*arctan(n, (double)1/239);
-
-        vectors[i-1] = first_term - second_term;
-      }
+      arctan(n,vectors);
   }
 
   double *local_values = calloc(iterations, sizeof(double));
@@ -43,6 +38,7 @@ double mach1_function(int n, int mpi_size, int mpi_rank){
   double values_sum = 0.0;
   for (int i=0; i<iterations; i++) {
       values_sum += local_values[i];
+
   }
 
   double the_pi = 0.0;

@@ -1,7 +1,7 @@
 #ifndef MACH1_H_
 #define MACH1_H_
 
-double arctan(int, double);
+void arctan(int, double *);
 double mach1_function(int, int, int);
 
-#endif /* MACH0_H_ */
+#endif /* MACH1_H_ */
