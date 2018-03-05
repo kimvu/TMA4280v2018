@@ -9,10 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2f98b7a-6e0f-4af7-a900-3f37a2eb1e29" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/hybrid/zetahyb.c" afterPath="$PROJECT_DIR$/hybrid/zetahyb.c" />
-    </list>
+    <list default="true" id="f2f98b7a-6e0f-4af7-a900-3f37a2eb1e29" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -193,7 +190,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22477000" />
+    <option name="totallyTimeSpent" value="22848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="24" width="960" height="993" extended-state="4" />
