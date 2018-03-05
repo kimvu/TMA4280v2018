@@ -1,11 +1,13 @@
 #include <math.h>
-#include "zeta1.h"
+#include "zetahyb.h"
 #include <stdio.h>
 #include "mpi.h"
+#include "omp.h"
 #include <stdlib.h>
+#include <assert.h>
 
 
-double zeta1_function(int n, int mpi_size, int mpi_rank)
+double zetahyb_function(int n, int mpi_size, int mpi_rank, int n_threads)
 {
   // Number of iterations
   int iterations = n / mpi_size;
@@ -17,6 +19,7 @@ double zeta1_function(int n, int mpi_size, int mpi_rank)
   if(mpi_rank == 0){
       // Allocating space
       vectors = calloc((iterations * mpi_size) + mpi_size, sizeof(double));
+      #pragma omp parallel for num_threads(n_threads)
       for (int i=1; i<=n; i++) {
           vectors[i-1] = 1.0/((double)i*(double)i);
       }
@@ -40,4 +43,26 @@ double zeta1_function(int n, int mpi_size, int mpi_rank)
   free(local_values);
 
   return sqrt(sum*6);
+}
+
+int main(int argc, char *argv[]){
+
+  int n = atoi(argv[2]);
+  int n_threads = atoi(argv[1]);
+  //init mpi
+  int mpi_size, mpi_rank;
+  MPI_Init(NULL, NULL);
+  MPI_Comm_size(MPI_COMM_WORLD, &mpi_size);
+  MPI_Comm_rank(MPI_COMM_WORLD, &mpi_rank);
+
+  assert(ceil(log2(mpi_size)) == floor(log2(mpi_size)));
+
+  double res = zetahyb_function(n, mpi_size, mpi_rank, n_threads);
+
+  if(mpi_rank == 0){
+    printf("Resiult: %f\n", res);
+  }
+
+  //Finalize the MPI
+  MPI_Finalize();
 }
