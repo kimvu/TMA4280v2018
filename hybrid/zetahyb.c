@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-
+//Hybrid function
 double zetahyb_function(int n, int mpi_size, int mpi_rank, int n_threads)
 {
   // Number of iterations
