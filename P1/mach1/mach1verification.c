@@ -16,7 +16,7 @@ int verification_mach1()
 
     FILE *f = fopen("verification_results.txt", "w");
 
-    for (int i = 1; i <= 12; i++){
+    for (int i = 1; i <= 16; i++){
         double time1 = MPI_Wtime();
         double mach = mach1_function(pow(2, i), mpi_size, mpi_rank);
         double time2 = MPI_Wtime();
@@ -24,8 +24,8 @@ int verification_mach1()
         double error = fabs(M_PI - mach);
         double time = time2 - time1;
         if(mpi_rank == 0){
-           fprintf(f, "Error: %e - Time: %e\n", error, time);
-           printf("Error: %e - Time: %e\n", error, time);
+            fprintf(f, "N = %d - Error: %e - Time: %e\n", i, error, time);
+            printf("N = %d\nError: %e\nTime: %e\n\n", i, error, time);
         }
     }
 
