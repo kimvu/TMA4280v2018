@@ -1,3 +1,3 @@
-# TMA4280 - Project 1 #
+# TMA4280 #
 
 Mii Erik Samyo Haugård and Kim Long Vu
