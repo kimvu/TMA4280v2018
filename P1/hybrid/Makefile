@@ -12,4 +12,4 @@ clean:
 	rm -f *.o $(TARGET)
 
 run:
-	mpirun -np 4 zetahyb 16 1024
+	mpirun -np 100 zetahyb 100 10 0

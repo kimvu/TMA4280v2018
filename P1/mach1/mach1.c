@@ -39,7 +39,6 @@ double mach1_function(int n, int mpi_size, int mpi_rank, int dist){
 
     for (int i=0; i<iterations; i++) {
         values_sum += local_values[i];
-
     }
 
     // Freeing memory
@@ -50,9 +49,21 @@ double mach1_function(int n, int mpi_size, int mpi_rank, int dist){
   }
   else
   {
-    // Calculating local sum, reducing to mpi_rank 0
-    int i0 = iterations * mpi_rank;
-    int i1 = i0 + iterations;
+
+    int i0;
+    int i1;
+    if(mpi_size > n){ // if mpi_size are bigger than n
+        if(mpi_rank < n){ // share the rest of the tasks
+            i0 = mpi_rank + 1;
+            i1 = i0 + 1;
+        }else{ // do nothing
+          i0 = 0;
+          i1 = 0;
+        }
+    }else{
+      i0 = iterations * mpi_rank + 1;
+      i1 = iterations + i0 ;
+    }
     for (int i=i0; i<i1; i++) {
       double term1 = pow(-1, i-1)*(pow((double)0.2, 2*i-1)/(2*i-1));
       double term2 = pow(-1, i-1)*(pow((double)1/239, 2*i-1)/(2*i-1));

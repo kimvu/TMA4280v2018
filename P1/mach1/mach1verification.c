@@ -4,7 +4,9 @@
 #include "mach1.h"
 #include <math.h>
 #include "mpi.h"
+#ifndef M_PI
 #define M_PI 3.14159265358979323846
+#endif
 
 int verification_mach1(int dist)
 {
@@ -24,14 +26,14 @@ int verification_mach1(int dist)
         double mach = mach1_function(pow(2, i), mpi_size, mpi_rank, dist);
 
         if(mpi_rank == 0){
-            printf("%f\n", mach);
-            double error = fabs(M_PI - mach);
-            fprintf(f, "N = %d - Error: %e\n", i, error);
+            double error = fabs(mach -M_PI);
+            //printf("%.16f\n", error);
+            fprintf(f, "N = %d - Error: %e\n", (int)pow(2,i), error);
         }
     }
     if(mpi_rank == 0){
-        double time = MPI_Wtime() - time1;
-        printf("Time: %e\n", time);
+        double time_final = MPI_Wtime() - time1;
+        printf("Time: %f\n", time_final);
     }
     MPI_Finalize();
 

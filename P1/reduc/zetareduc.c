@@ -6,42 +6,64 @@
 #include <assert.h>
 
 
-double zetareduc_function(int n, int mpi_size, int mpi_rank)
+double zetareduc_function(int n, int mpi_size, int mpi_rank, int dist)
 {
+
   // Number of iterations
-  int iterations = n / mpi_size + 1;
+  int iterations = n / mpi_size;
 
   // Initializing vectors
   double *vectors;
-
-  // Calculating
-  if(mpi_rank == 0){
-      // Allocating space
-      vectors = calloc((iterations * mpi_size) + mpi_size, sizeof(double));
-      for (int i=1; i<=n; i++) {
-          vectors[i-1] = 1.0/((double)i*(double)i);
-      }
-  }
-  double *local_values = calloc(iterations, sizeof(double));
-  // Partitions the array
-  MPI_Scatter(vectors, iterations, MPI_DOUBLE, local_values, iterations, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-
-  // Calculating local sum, reducing to mpi_rank 0
+  double the_pi = 0.0;
   double values_sum = 0.0;
-  for (int i=0; i<iterations; i++) {
-      values_sum += local_values[i];
+  // Calculating
+  if(dist)
+  {
+    if(mpi_rank == 0){
+        // Allocating space
+        vectors = calloc((iterations * mpi_size) + mpi_size, sizeof(double));
+        for (int i=1; i<=n; i++) {
+            vectors[i-1] = 1.0/((double)i*(double)i);
+        }
+    }
+    double *local_values = calloc(iterations, sizeof(double));
+    // Partitions the array
+    MPI_Scatter(vectors, iterations, MPI_DOUBLE, local_values, iterations, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+
+    // Calculating local sum, reducing to mpi_rank 0
+
+    for (int i=0; i<iterations; i++) {
+        values_sum += local_values[i];
+    }
+
+    // Freeing memory
+    if(mpi_rank == 0){
+        free (vectors);
+    }
+    free(local_values);
+  }else{
+    int i0;
+    int i1;
+    if(mpi_size > n){ // if mpi_size are bigger than n
+        if(mpi_rank < n){ // share the rest of the tasks
+            i0 = mpi_rank + 1;
+            i1 = i0 + 1;
+        }else{ // do nothing
+          i0 = 0;
+          i1 = 0;
+        }
+    }else{
+      i0 = iterations * mpi_rank + 1;
+      i1 = iterations + i0 ;
+    }
+    for (int i=i0; i<i1; i++) {
+      values_sum += 1.0/((double)i*(double)i);
+    }
   }
-
-    double sum = recursive_allreduce(mpi_size, mpi_rank, values_sum);
-
-  // Freeing memory
-  if(mpi_rank == 0){
-      free (vectors);
-  }
-  free(local_values);
-
-  return sqrt(sum*6);
+  the_pi = recursive_allreduce(mpi_size, mpi_rank, values_sum);
+  return sqrt(the_pi*6);
 }
+
 
 // Global reduction
 double allreduce(int mpi_size, int mpi_rank, double values_sum){
@@ -77,8 +99,9 @@ int main(int argc, char **argv){
 
     // Getting argument
     int n = atoi(argv[1]);
+    int dist = atoi(argv[2]);
 
-    double sum = zetareduc_function(n, mpi_size, mpi_rank);
+    double sum = zetareduc_function(n, mpi_size, mpi_rank, dist);
     printf("MPI Rank: %d - Result: %f\n", mpi_rank, sum);
 
     // Finalizing MPI
