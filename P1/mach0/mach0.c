@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
+// The arctan function
 double arctan(int n, double x)
 {
   double sum = 0;
@@ -13,6 +14,7 @@ double arctan(int n, double x)
   return sum;
 }
 
+// The mach function
 double mach_function(int n){
   double first_term = 16*arctan(n, (double)0.2);
   double second_term = 4*arctan(n, (double)1/239);

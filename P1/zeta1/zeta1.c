@@ -4,33 +4,34 @@
 #include "mpi.h"
 #include <stdlib.h>
 
-
+// The zeta function
 double zeta1_function(int n, int mpi_size, int mpi_rank, int dist)
 {
 
   // Number of iterations
   int iterations = n / mpi_size;
 
-  // Initializing vectors
+  // Initializing vectors ++
   double *vectors;
   double the_pi = 0.0;
   double values_sum = 0.0;
-  // Calculating
+
+    // Check if the work load should be distributed
   if(dist)
   {
     if(mpi_rank == 0){
-        // Allocating space
+        // Allocating space and calculating
         vectors = calloc((iterations * mpi_size) + mpi_size, sizeof(double));
         for (int i=1; i<=n; i++) {
             vectors[i-1] = 1.0/((double)i*(double)i);
         }
     }
     double *local_values = calloc(iterations, sizeof(double));
-    // Partitions the array
+
+    // Splitting data to different processes from the vector
     MPI_Scatter(vectors, iterations, MPI_DOUBLE, local_values, iterations, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-    // Calculating local sum, reducing to mpi_rank 0
-
+    // Calculating local sum
     for (int i=0; i<iterations; i++) {
         values_sum += local_values[i];
     }
@@ -59,6 +60,8 @@ double zeta1_function(int n, int mpi_size, int mpi_rank, int dist)
       values_sum += 1.0/((double)i*(double)i);
     }
   }
+
+  // Collects the calculations from all the processes, and reduces to the variable the_pi
   MPI_Reduce(&values_sum, &the_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
   return sqrt(the_pi*6);
 }

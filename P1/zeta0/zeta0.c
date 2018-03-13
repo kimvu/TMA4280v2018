@@ -2,7 +2,7 @@
 #include "zeta0.h"
 #include <stdio.h>
 
-
+// Zeta function
 double zeta_function(int n)
 {
   double sum = 0;

@@ -1,10 +1,8 @@
 
-# This Makefile is still simple and the compilations lines are just duplicated.
-# This is suboptimal but good enough for this case.
 TARGET=mach2
 SRC=mach2.c
 LDLIBS=-lm
-# Notice that the prerequisites can be stored in a variable.
+
 all:	$(TARGET)
 
 clean:

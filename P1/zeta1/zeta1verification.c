@@ -6,25 +6,31 @@
 #include "mpi.h"
 #define M_PI 3.14159265358979323846
 
+// Verification test
 int verification_zeta1(int dist)
 {
+  // Initializing mpi
   int mpi_size, mpi_rank;
   MPI_Init(NULL, NULL);
   MPI_Comm_size(MPI_COMM_WORLD, &mpi_size);
   MPI_Comm_rank(MPI_COMM_WORLD, &mpi_rank);
 
+  // Assertion test, checks that the number of processes is a power of 2
   assert(ceil(log2(mpi_size)) == floor(log2(mpi_size)));
 
+  // Creates file
   FILE *f = fopen("verification_results.txt", "w");
+  // For timing the program
   double time1 = 0.0;
   if(mpi_rank == 0){
     time1 = MPI_Wtime();
   }
   for (int i = 1; i <= 30; i++){
       double zeta = zeta1_function(pow(2,i), mpi_size, mpi_rank, dist);
-      double error = (fabs(M_PI - zeta));
+
       if(mpi_rank == 0){
-      fprintf(f, "N = %d - Error: %e\n", i, error);
+        double error = (fabs(M_PI - zeta));
+        fprintf(f, "N = %d - Error: %e\n", i, error);
       }
 
   }

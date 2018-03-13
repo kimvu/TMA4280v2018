@@ -12,11 +12,12 @@ double zetareduc_function(int n, int mpi_size, int mpi_rank, int dist)
   // Number of iterations
   int iterations = n / mpi_size;
 
-  // Initializing vectors
+  // Initializing vectors ++
   double *vectors;
   double the_pi = 0.0;
   double values_sum = 0.0;
-  // Calculating
+
+  // Check if the work load should be distributed
   if(dist)
   {
     if(mpi_rank == 0){
@@ -27,11 +28,11 @@ double zetareduc_function(int n, int mpi_size, int mpi_rank, int dist)
         }
     }
     double *local_values = calloc(iterations, sizeof(double));
-    // Partitions the array
+
+    // Splitting data to different processes from the vector
     MPI_Scatter(vectors, iterations, MPI_DOUBLE, local_values, iterations, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-    // Calculating local sum, reducing to mpi_rank 0
-
+    // Calculating local sum
     for (int i=0; i<iterations; i++) {
         values_sum += local_values[i];
     }
