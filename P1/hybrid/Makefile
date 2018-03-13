@@ -9,4 +9,4 @@ clean:
 	rm -f *.o $(TARGET)
 
 run:
-	mpirun -np 8 zetahyb 100 10 0
+	mpirun -np 8 zetahyb 100 10 1

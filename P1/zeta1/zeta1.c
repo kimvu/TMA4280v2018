@@ -17,7 +17,7 @@ double zeta1_function(int n, int mpi_size, int mpi_rank, int dist)
   double values_sum = 0.0;
 
     // Check if the work load should be distributed
-  if(dist)
+  if(!dist)
   {
     if(mpi_rank == 0){
         // Allocating space and calculating
