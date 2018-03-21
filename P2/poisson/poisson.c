@@ -173,7 +173,7 @@ real rhs(real x, real y) {
  * In parallel the function MPI_Alltoallv is used to map directly the entries
  * stored in the array to the block structure, using displacement arrays.
  */
-
+// Denne er viktig, her er alt i loopen i samme prosess, vær nøye her. Må flippes, transponereres
 void transpose(real **bt, real **b, size_t m)
 {
     for (size_t i = 0; i < m; i++) {
