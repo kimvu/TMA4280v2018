@@ -4,6 +4,7 @@
 #include <math.h>
 #define M_PI 3.14159265358979323846
 
+// Verification test
 int verification_mach0()
 {
   double errors[24];
@@ -11,8 +12,10 @@ int verification_mach0()
       errors[i-1] = (fabs(M_PI - mach_function(pow(2, i))));
     }
 
+    // Creates file
     FILE *f = fopen("verification_results.txt", "w");
 
+    // Writes to file
     for (int i = 1; i <= 24; i++){
       printf("%e\n", errors[i-1]);
       fprintf(f, "%e\n", errors[i-1]);

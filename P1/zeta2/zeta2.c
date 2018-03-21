@@ -4,7 +4,7 @@
 #include "omp.h"
 #include <stdlib.h>
 
-
+// The zeta function
 double zeta2_function(int n, int n_threads)
 {
   double sum = 0;
@@ -19,6 +19,7 @@ double zeta2_function(int n, int n_threads)
   return the_pi;
 }
 
+// The main function, testing the code
 int main(int argc, char *argv[])
 {
    int n = atoi(argv[1]);

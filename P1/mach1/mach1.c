@@ -4,6 +4,7 @@
 #include <mpi.h>
 #include <stdlib.h>
 
+// The arctan function
 void arctan(int n, double *vectors)
 {
   double sum = 0;
@@ -15,31 +16,33 @@ void arctan(int n, double *vectors)
   }
 }
 
+// The mach funtion
 double mach1_function(int n, int mpi_size, int mpi_rank, int dist){
 
   // Number of iterations
   int iterations = n / mpi_size;
   double values_sum = 0.0;
+
   // Initializing vectors
   double *vectors;
-  if (dist)
+
+  // Check if the work load should be distributed
+  if (!dist)
   {
-    // Calculating
     if(mpi_rank == 0){
-        // Allocating space
+        // Allocating space and calculating
         vectors = calloc((iterations * mpi_size) + mpi_size, sizeof(double));
         arctan(n,vectors);
     }
 
     double *local_values = calloc(iterations, sizeof(double));
-    // Partitions the array
+
+    // Splitting data to different processes from the vector
     MPI_Scatter(vectors, iterations, MPI_DOUBLE, local_values, iterations, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-    // Calculating local sum, reducing to mpi_rank 0
-
+    // Calculating sum
     for (int i=0; i<iterations; i++) {
         values_sum += local_values[i];
-
     }
 
     // Freeing memory
@@ -50,9 +53,23 @@ double mach1_function(int n, int mpi_size, int mpi_rank, int dist){
   }
   else
   {
-    // Calculating local sum, reducing to mpi_rank 0
-    int i0 = iterations * mpi_rank;
-    int i1 = i0 + iterations;
+
+    int i0;
+    int i1;
+    if(mpi_size > n){ // if mpi_size are bigger than n
+        if(mpi_rank < n){ // share the rest of the tasks
+            i0 = mpi_rank + 1;
+            i1 = i0 + 1;
+        }else{ // do nothing
+          i0 = 0;
+          i1 = 0;
+        }
+    }else{
+      i0 = iterations * mpi_rank + 1;
+      i1 = iterations + i0 ;
+    }
+
+    // Arctan function for each process
     for (int i=i0; i<i1; i++) {
       double term1 = pow(-1, i-1)*(pow((double)0.2, 2*i-1)/(2*i-1));
       double term2 = pow(-1, i-1)*(pow((double)1/239, 2*i-1)/(2*i-1));
@@ -61,6 +78,8 @@ double mach1_function(int n, int mpi_size, int mpi_rank, int dist){
   }
 
   double the_pi = 0.0;
+
+  // Collects the calculations from all the processes, and reduces to the variable the_pi
   MPI_Reduce(&values_sum, &the_pi, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 
   return the_pi;
