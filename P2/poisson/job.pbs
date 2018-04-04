@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -N test
+#PBS -A itea_lille-tma4280
+#PBS -W group_list=itea_lille-tma4280
+#PBS -l walltime=00:01:00
+#PBS -l select=1:ncpus=10:mpiprocs=1
+#PBS -o p2output
+#PBS -e p2error
+
+cd $PBS_O_WORKDIR
+module load GCC
+module load OpenMPI
+CC= mpicc FC= mpif90 cmake . -DCMAKE_BUILD_TYPE = Release
