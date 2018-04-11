@@ -204,12 +204,24 @@ real rhs(real x, real y) {
 // Denne er viktig, her er alt i loopen i samme prosess, vær nøye her. Må flippes, transponereres
 void transpose(real **bt, real **b, size_t m)
 {
-    for (size_t i = 0; i < m; i++) {
-        for (size_t j = 0; j < m; j++) {
-            bt[i][j] = b[j][i];
+
+    int i,j, row, col;
+    int blocksize = 16;
+
+    #pragma omp parallel for private(i, j, row, col) schedule(static, 2)
+    for ( i = 0; i < m; i += blocksize) {
+        for ( j = 0; j < m; j += blocksize) {
+            for (row = i; row < i + blocksize && row < m; row++) {
+                for (col = j; col < j + blocksize && col < m; col++) {
+                    d[row][ col] = c[col][row];
+                }
+            }
         }
     }
+
 }
+
+
 
 /*
  * The allocation of a vectore of size n is done with just allocating an array.
