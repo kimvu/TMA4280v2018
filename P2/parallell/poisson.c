@@ -213,7 +213,7 @@ void transpose(real **bt, real **b, size_t m)
         for ( j = 0; j < m; j += blocksize) {
             for (row = i; row < i + blocksize && row < m; row++) {
                 for (col = j; col < j + blocksize && col < m; col++) {
-                    d[row][ col] = c[col][row];
+                    bt[row][ col] = b[col][row];
                 }
             }
         }
