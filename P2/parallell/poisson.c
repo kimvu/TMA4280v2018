@@ -96,11 +96,11 @@ int main(int argc, char **argv)
      * The storage size is set to nn = 4 * n, look at Chapter 9. pages 98-100:
      * - Fourier coefficients are complex so storage is used for the real part
      *   and the imaginary part.
-     * - Fourier coefficients are defined for j = [[ - (n-1), + (n-1) ]] while 
+     * - Fourier coefficients are defined for j = [[ - (n-1), + (n-1) ]] while
      *   DST coefficients are defined for j [[ 0, n-1 ]].
      * As explained in the Lecture notes coefficients for positive j are stored
      * first.
-     * The array is allocated once and passed as arguments to avoid doings 
+     * The array is allocated once and passed as arguments to avoid doings
      * reallocations at each function call.
      */
     int nn = 4 * n;
@@ -110,7 +110,7 @@ int main(int argc, char **argv)
      * Initialize the right hand side data for a given rhs function.
      * Note that the right hand-side is set at nodes corresponding to degrees
      * of freedom, so it excludes the boundary (bug fixed by petterjf 2017).
-     * 
+     *
      */
 #pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < m; i++) {
@@ -124,9 +124,9 @@ int main(int argc, char **argv)
      * Instead of using two matrix-matrix products the Discrete Sine Transform
      * (DST) is used.
      * The DST code is implemented in FORTRAN in fsf.f and can be called from C.
-     * The array zz is used as storage for DST coefficients and internally for 
+     * The array zz is used as storage for DST coefficients and internally for
      * FFT coefficients in fst_ and fstinv_.
-     * In functions fst_ and fst_inv_ coefficients are written back to the input 
+     * In functions fst_ and fst_inv_ coefficients are written back to the input
      * array (first argument) so that the initial values are overwritten.
      */
 
@@ -179,7 +179,7 @@ int main(int argc, char **argv)
         }
     }
     double u_max_after_reduce = 0.0;
-    MPI_Allreduce(&u_max, &u_max_after_reduce, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
+    MPI_Allreduce(&u_max, &u_max_after_reduce, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
     printf("u_max = %e\n", u_max_after_reduce);
 
     MPI_Finalize ();
@@ -244,7 +244,7 @@ real **mk_2D_array(size_t n1, size_t n2, bool zero)
     else {
         ret[0] = (real *)malloc(n1 * n2 * sizeof(real));
     }
-    
+
     // 3
     for (size_t i = 1; i < n1; i++) {
         ret[i] = ret[i-1] + n2;
