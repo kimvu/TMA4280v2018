@@ -180,7 +180,7 @@ int main(int argc, char **argv)
     }
     double u_max_after_reduce = 0.0;
     MPI_Allreduce(&u_max, &u_max_after_reduce, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
-    if(mpi_rank == 1){
+    if(mpi_rank == 0){
         printf("u_max = %e\n", u_max_after_reduce);
     }
     MPI_Finalize ();
