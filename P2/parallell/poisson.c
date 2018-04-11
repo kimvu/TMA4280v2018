@@ -178,8 +178,9 @@ int main(int argc, char **argv)
             u_max = u_max > b[i][j] ? u_max : b[i][j];
         }
     }
-
-    printf("u_max = %e\n", u_max);
+    double u_max_after_reduce = 0.0;
+    MPI_Allreduce(&u_max, &u_max_after_reduce, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
+    printf("u_max = %e\n", u_max_after_reduce);
 
     MPI_Finalize ();
     return 0;

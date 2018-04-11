@@ -10,13 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2f98b7a-6e0f-4af7-a900-3f37a2eb1e29" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/P2/parallell/CMakeLists.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/P2/poisson/CMakeLists.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/P2/poisson/fst.f" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/P2/poisson/job.pbs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/P2/poisson/poisson.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/P2/poisson/poisson.f90" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/P2/parallell/poisson.c" afterPath="$PROJECT_DIR$/P2/parallell/poisson.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,48 +22,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="zetareduc.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/P1/reduc/zetareduc.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="102" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mach2.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/P1/mach2/mach2.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zeta2.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/P1/zeta2/zeta2.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="67" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="poisson.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/P2/parallell/poisson.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+            <state relative-caret-position="268">
+              <caret line="181" column="45" lean-forward="false" selection-start-line="181" selection-start-column="27" selection-end-line="181" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="poisson.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/P2/base/poisson.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="156" column="32" lean-forward="false" selection-start-line="156" selection-start-column="27" selection-end-line="156" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fst_</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,9 +108,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="960" />
+    <option name="x" value="476" />
     <option name="y" value="24" />
-    <option name="width" value="960" />
+    <option name="width" value="1444" />
     <option name="height" value="993" />
   </component>
   <component name="ProjectView">
@@ -154,23 +134,6 @@
             <path>
               <item name="TMA4280v2018" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="TMA4280v2018" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TMA4280v2018" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="TMA4280v2018" type="462c0819:PsiDirectoryNode" />
-              <item name="P1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TMA4280v2018" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="TMA4280v2018" type="462c0819:PsiDirectoryNode" />
-              <item name="P1" type="462c0819:PsiDirectoryNode" />
-              <item name="mach2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TMA4280v2018" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="TMA4280v2018" type="462c0819:PsiDirectoryNode" />
-              <item name="P1" type="462c0819:PsiDirectoryNode" />
-              <item name="zeta2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TMA4280v2018" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
@@ -232,20 +195,21 @@
       <updated>1519902531877</updated>
       <workItem from="1519902533158" duration="22441000" />
       <workItem from="1520943632224" duration="3885000" />
-      <workItem from="1523276558756" duration="6601000" />
+      <workItem from="1523276558756" duration="7475000" />
+      <workItem from="1523451849287" duration="1420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38746000" />
+    <option name="totallyTimeSpent" value="41040000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="24" width="960" height="993" extended-state="4" />
+    <frame x="476" y="24" width="1444" height="993" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22916667" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18282549" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31003383" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31116122" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -273,7 +237,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zeta0/zeta0verification.c" />
     <entry file="file://$PROJECT_DIR$/zeta1/zeta1verification.c" />
     <entry file="file://$PROJECT_DIR$/mach1/verification_results.txt" />
     <entry file="file://$PROJECT_DIR$/zeta1/zeta1.c" />
@@ -444,7 +407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -455,38 +417,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/P2/poisson/fst.f">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2303">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/P2/poisson/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-477">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/P2/poisson/poisson.f90">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1155">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/P2/poisson/poisson.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-999">
-          <caret line="144" column="0" lean-forward="true" selection-start-line="140" selection-start-column="4" selection-end-line="144" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/P2/poisson/fst.f" />
+    <entry file="file://$PROJECT_DIR$/P2/poisson/CMakeLists.txt" />
+    <entry file="file://$PROJECT_DIR$/P2/poisson/poisson.f90" />
+    <entry file="file://$PROJECT_DIR$/P2/poisson/poisson.c" />
     <entry file="file://$PROJECT_DIR$/P2/base/fst.f">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2289">
@@ -495,19 +429,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/P2/base/job.pbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/P2/base/job.pbs" />
     <entry file="file://$PROJECT_DIR$/P2/parallell/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -515,7 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-432">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -523,14 +448,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-77">
           <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/P1/reduc/zetareduc.c">
+    <entry file="file://$PROJECT_DIR$/P1/zeta2/zeta2.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="102" selection-end-column="29" />
+        <state relative-caret-position="99">
+          <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -543,26 +467,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/P2/base/poisson.c">
+    <entry file="file://$PROJECT_DIR$/P1/reduc/zetareduc.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="70" column="14" lean-forward="false" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/P1/zeta2/zeta2.c">
+    <entry file="file://$PROJECT_DIR$/P2/base/poisson.f90">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="11" column="50" lean-forward="false" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="67" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/P2/base/poisson.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="156" column="32" lean-forward="false" selection-start-line="156" selection-start-column="27" selection-end-line="156" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/P2/parallell/poisson.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+        <state relative-caret-position="268">
+          <caret line="181" column="45" lean-forward="false" selection-start-line="181" selection-start-column="27" selection-end-line="181" selection-end-column="45" />
           <folding />
         </state>
       </provider>
