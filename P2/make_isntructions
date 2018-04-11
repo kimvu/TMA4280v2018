@@ -4,6 +4,6 @@ CC=mpicc FC=mpif90 cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=mpicc -
 
 gmake
 
-./poisson 128
+./poisson 128 *#n_threads*
 
 u_max = 6.250000e-02
