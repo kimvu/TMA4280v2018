@@ -1,0 +1,3 @@
+module load GCC
+module load OpenMPI
+CC=mpicc FC=mpif90 cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=mpicc -DCMAKE_CXX_COMPILER=mpicxx
