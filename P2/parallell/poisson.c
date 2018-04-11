@@ -21,6 +21,8 @@
 
 typedef double real;
 typedef int bool;
+//Global variables
+int mpi_size, mpi_rank;
 
 // Function prototypes
 real *mk_1D_array(size_t n, bool zero);
@@ -38,7 +40,6 @@ void fstinv_(real *v, int *n, real *w, int *nn);
 int main(int argc, char **argv)
 {
     // Initializing MPI
-    int mpi_size, mpi_rank;
     MPI_Init(NULL, NULL);
     MPI_Comm_size(MPI_COMM_WORLD, &mpi_size);
     MPI_Comm_rank(MPI_COMM_WORLD, &mpi_rank);
@@ -210,6 +211,14 @@ void transpose(real **bt, real **b, size_t m)
           bt[i][j] = b[j][i];
       }
   }*/
+    sendcounts = (int *)malloc( mpi_size * sizeof(int) );
+    recvcounts = (int *)malloc( mpi_size * sizeof(int) );
+    rdispls = (int *)malloc( mpi_size * sizeof(int) );
+    sdispls = (int *)malloc( mpi_size * sizeof(int) );
+
+
+    MPI_Alltoallv( sbuf, sendcounts, sdispls, MPI_DOUBLE, rbuf, recvcounts, rdispls, matrixcolumntype, MPI_COMM_WORLD );
+    /*jallaversjon
     int i, j, row, col;
     int blocksize = 16;
 
@@ -222,7 +231,7 @@ void transpose(real **bt, real **b, size_t m)
                 }
             }
         }
-    }
+    }*/
 
 }
 
