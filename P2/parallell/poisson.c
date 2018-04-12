@@ -105,7 +105,11 @@ int main(int argc, char **argv)
      * reallocations at each function call.
      */
     int nn = 4 * n;
-    real *z = mk_1D_array(nn, false);
+    real *z[n_threads];
+
+    for (int i = 0; i < n_threads; i++)
+    		z[i] = mk_1D_array(nn, false);
+
 
     /*
      * Initialize the right hand side data for a given rhs function.
@@ -131,18 +135,16 @@ int main(int argc, char **argv)
      * array (first argument) so that the initial values are overwritten.
      */
 // TODO
-//#pragma omp parallel for num_threads(n_threads) schedule(static)
+#pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < m; i++) {
-      fst_(b[i], &n, z, &nn);
-      //  fst_(b[i], &n, z[omp_get_thread_num()], &nn);
+        fst_(b[i], &n, z[omp_get_thread_num()], &nn);
     }
     transpose(bt, b, m);
 
 // TODO
-//#pragma omp parallel for num_threads(n_threads) schedule(static)
+#pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < m; i++) {
-        fstinv_(bt[i], &n, z, &nn);
-        // fstinv_(bt[i], &n, z[omp_get_thread_num()], &nn);
+      fstinv_(bt[i], &n, z[omp_get_thread_num()], &nn);
     }
 
     /*
@@ -159,19 +161,18 @@ int main(int argc, char **argv)
      * Compute U = S^-1 * (S * Utilde^T) (Chapter 9. page 101 step 3)
      */
 // TODO
-//#pragma omp parallel for num_threads(n_threads) schedule(static)
+#pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < m; i++) {
-        fst_(bt[i], &n, z, &nn);
-        // fst_(bt[i], &n, z[omp_get_thread_num()], &nn);
+      fst_(bt[i], &n, z[omp_get_thread_num()], &nn);
     }
 
     transpose(b, bt, m);
 
 // TODO
-//#pragma omp parallel for num_threads(n_threads) schedule(static)
+ #pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < m; i++) {
-      // fstinv_(b[i], &n, z[omp_get_thread_num()], &nn);
-        fstinv_(b[i], &n, z, &nn);
+      fstinv_(b[i], &n, z[omp_get_thread_num()], &nn);
+        //fstinv_(b[i], &n, z, &nn);
     }
 
     /*

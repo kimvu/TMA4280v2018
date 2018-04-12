@@ -855,3 +855,72 @@ Source file was:
       n = omp_get_num_threads()
       end program test
   
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c0931/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c0931.dir/build.make CMakeFiles/cmTC_c0931.dir/build
+make[1]: Entering directory '/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c0931.dir/src.c.o
+/usr/bin/mpicc    -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTC_c0931.dir/src.c.o   -c /home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_c0931
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0931.dir/link.txt --verbose=1
+/usr/bin/mpicc   -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTC_c0931.dir/src.c.o  -o cmTC_c0931 -rdynamic 
+make[1]: Leaving directory '/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5c669/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5c669.dir/build.make CMakeFiles/cmTC_5c669.dir/build
+make[1]: Entering directory '/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5c669.dir/src.cxx.o
+/usr/bin/mpicxx     -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTC_5c669.dir/src.cxx.o -c /home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_5c669
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c669.dir/link.txt --verbose=1
+/usr/bin/mpicxx    -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTC_5c669.dir/src.cxx.o  -o cmTC_5c669 -rdynamic 
+make[1]: Leaving directory '/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing Fortran SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a566b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a566b.dir/build.make CMakeFiles/cmTC_a566b.dir/build
+make[1]: Entering directory '/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_a566b.dir/src.F.o
+/usr/bin/mpif90    -DOpenMP_FLAG_DETECTED -fopenmp   -c /home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/src.F -o CMakeFiles/cmTC_a566b.dir/src.F.o
+Linking Fortran executable cmTC_a566b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a566b.dir/link.txt --verbose=1
+/usr/bin/mpif90      -DOpenMP_FLAG_DETECTED -fopenmp CMakeFiles/cmTC_a566b.dir/src.F.o  -o cmTC_a566b  
+make[1]: Leaving directory '/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+      program test
+      use omp_lib
+      integer :: n
+      n = omp_get_num_threads()
+      end program test
+  
