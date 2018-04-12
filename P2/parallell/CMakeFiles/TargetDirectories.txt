@@ -1,0 +1,5 @@
+/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/edit_cache.dir
+/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/common.dir
+/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/poisson-f.dir
+/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/poisson.dir
+/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/rebuild_cache.dir

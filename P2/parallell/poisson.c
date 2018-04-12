@@ -130,16 +130,19 @@ int main(int argc, char **argv)
      * In functions fst_ and fst_inv_ coefficients are written back to the input
      * array (first argument) so that the initial values are overwritten.
      */
-
-#pragma omp parallel for num_threads(n_threads) schedule(static)
+// TODO
+//#pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < m; i++) {
-        fst_(b[i], &n, z, &nn);
+      fst_(b[i], &n, z, &nn);
+      //  fst_(b[i], &n, z[omp_get_thread_num()], &nn);
     }
     transpose(bt, b, m);
 
-#pragma omp parallel for num_threads(n_threads) schedule(static)
+// TODO
+//#pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < m; i++) {
         fstinv_(bt[i], &n, z, &nn);
+        // fstinv_(bt[i], &n, z[omp_get_thread_num()], &nn);
     }
 
     /*
@@ -155,15 +158,19 @@ int main(int argc, char **argv)
     /*
      * Compute U = S^-1 * (S * Utilde^T) (Chapter 9. page 101 step 3)
      */
-#pragma omp parallel for num_threads(n_threads) schedule(static)
+// TODO
+//#pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < m; i++) {
         fst_(bt[i], &n, z, &nn);
+        // fst_(bt[i], &n, z[omp_get_thread_num()], &nn);
     }
 
     transpose(b, bt, m);
 
-#pragma omp parallel for num_threads(n_threads) schedule(static)
+// TODO
+//#pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < m; i++) {
+      // fstinv_(b[i], &n, z[omp_get_thread_num()], &nn);
         fstinv_(b[i], &n, z, &nn);
     }
 
@@ -173,6 +180,7 @@ int main(int argc, char **argv)
      */
     double u_max = 0.0;
 
+// TODO Doesn't these two do the same? One with omp, other with MPI?
 #pragma omp parallel for num_threads(n_threads) reduction(max: u_max)
     for (size_t i = 0; i < m; i++) {
         for (size_t j = 0; j < m; j++) {
@@ -205,12 +213,14 @@ real rhs(real x, real y) {
 // Denne er viktig, her er alt i loopen i samme prosess, vær nøye her. Må flippes, transponereres
 void transpose(real **bt, real **b, size_t m)
 {
-  /*
+/*
   for (size_t i = 0; i < m; i++) {
       for (size_t j = 0; j < m; j++) {
           bt[i][j] = b[j][i];
       }
-  }*/
+  }
+  */
+
     sendcounts = (int *)malloc( mpi_size * sizeof(int) );
     recvcounts = (int *)malloc( mpi_size * sizeof(int) );
     rdispls = (int *)malloc( mpi_size * sizeof(int) );
@@ -218,6 +228,7 @@ void transpose(real **bt, real **b, size_t m)
 
 
     MPI_Alltoallv( sbuf, sendcounts, sdispls, MPI_DOUBLE, rbuf, recvcounts, rdispls, matrixcolumntype, MPI_COMM_WORLD );
+
     /*jallaversjon
     int i, j, row, col;
     int blocksize = 16;

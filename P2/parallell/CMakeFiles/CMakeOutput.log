@@ -1,0 +1,857 @@
+The system is: Linux - 4.4.0-119-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/mpicc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/3.5.1/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/mpicxx 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/3.5.1/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1f159/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1f159.dir/build.make CMakeFiles/cmTC_1f159.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1f159.dir/testCCompiler.c.o
+/usr/bin/mpicc     -o CMakeFiles/cmTC_1f159.dir/testCCompiler.c.o   -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_1f159
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f159.dir/link.txt --verbose=1
+/usr/bin/mpicc       CMakeFiles/cmTC_1f159.dir/testCCompiler.c.o  -o cmTC_1f159 -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6ee65/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6ee65.dir/build.make CMakeFiles/cmTC_6ee65.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6ee65.dir/CMakeCCompilerABI.c.o
+/usr/bin/mpicc     -o CMakeFiles/cmTC_6ee65.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_6ee65
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ee65.dir/link.txt --verbose=1
+/usr/bin/mpicc      -v CMakeFiles/cmTC_6ee65.dir/CMakeCCompilerABI.c.o  -o cmTC_6ee65 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.1-2ubuntu1~16.04' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 5.4.1 20160904 (Ubuntu 5.4.1-2ubuntu1~16.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6ee65' '-rdynamic' '-I' '/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent' '-I' '/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include' '-I' '/usr/lib/openmpi/include' '-I' '/usr/lib/openmpi/include/openmpi' '-pthread' '-L/usr/lib/openmpi/lib' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2JpeUI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_6ee65 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/openmpi/lib -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_6ee65.dir/CMakeCCompilerABI.c.o -rpath /usr/lib/openmpi/lib --enable-new-dtags -lmpi -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_6ee65/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_6ee65.dir/build.make CMakeFiles/cmTC_6ee65.dir/build]
+  ignore line: [make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_6ee65.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/mpicc     -o CMakeFiles/cmTC_6ee65.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_6ee65]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ee65.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/mpicc      -v CMakeFiles/cmTC_6ee65.dir/CMakeCCompilerABI.c.o  -o cmTC_6ee65 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.1-2ubuntu1~16.04' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 5.4.1 20160904 (Ubuntu 5.4.1-2ubuntu1~16.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6ee65' '-rdynamic' '-I' '/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent' '-I' '/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include' '-I' '/usr/lib/openmpi/include' '-I' '/usr/lib/openmpi/include/openmpi' '-pthread' '-L/usr/lib/openmpi/lib' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2JpeUI.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_6ee65 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/openmpi/lib -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_6ee65.dir/CMakeCCompilerABI.c.o -rpath /usr/lib/openmpi/lib --enable-new-dtags -lmpi -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc2JpeUI.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_6ee65] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/openmpi/lib] ==> dir [/usr/lib/openmpi/lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
+    arg [CMakeFiles/cmTC_6ee65.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/usr/lib/openmpi/lib] ==> ignore
+    arg [--enable-new-dtags] ==> ignore
+    arg [-lmpi] ==> lib [mpi]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/usr/lib/openmpi/lib] ==> [/usr/lib/openmpi/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5] ==> [/usr/lib/gcc/x86_64-linux-gnu/5]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> [/usr/lib]
+  implicit libs: [mpi;pthread;c]
+  implicit dirs: [/usr/lib/openmpi/lib;/usr/lib/gcc/x86_64-linux-gnu/5;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1804b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1804b.dir/build.make CMakeFiles/cmTC_1804b.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1804b.dir/feature_tests.c.o
+/usr/bin/mpicc    -std=c11 -o CMakeFiles/cmTC_1804b.dir/feature_tests.c.o   -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/feature_tests.c
+Linking C executable cmTC_1804b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1804b.dir/link.txt --verbose=1
+/usr/bin/mpicc       CMakeFiles/cmTC_1804b.dir/feature_tests.c.o  -o cmTC_1804b -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4c9d2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4c9d2.dir/build.make CMakeFiles/cmTC_4c9d2.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4c9d2.dir/feature_tests.c.o
+/usr/bin/mpicc    -std=c99 -o CMakeFiles/cmTC_4c9d2.dir/feature_tests.c.o   -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/feature_tests.c
+Linking C executable cmTC_4c9d2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c9d2.dir/link.txt --verbose=1
+/usr/bin/mpicc       CMakeFiles/cmTC_4c9d2.dir/feature_tests.c.o  -o cmTC_4c9d2 -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_eabd5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_eabd5.dir/build.make CMakeFiles/cmTC_eabd5.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eabd5.dir/feature_tests.c.o
+/usr/bin/mpicc    -std=c90 -o CMakeFiles/cmTC_eabd5.dir/feature_tests.c.o   -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/feature_tests.c
+Linking C executable cmTC_eabd5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eabd5.dir/link.txt --verbose=1
+/usr/bin/mpicc       CMakeFiles/cmTC_eabd5.dir/feature_tests.c.o  -o cmTC_eabd5 -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b0c60/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b0c60.dir/build.make CMakeFiles/cmTC_b0c60.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b0c60.dir/testCXXCompiler.cxx.o
+/usr/bin/mpicxx      -o CMakeFiles/cmTC_b0c60.dir/testCXXCompiler.cxx.o -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_b0c60
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0c60.dir/link.txt --verbose=1
+/usr/bin/mpicxx        CMakeFiles/cmTC_b0c60.dir/testCXXCompiler.cxx.o  -o cmTC_b0c60 -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_756dd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_756dd.dir/build.make CMakeFiles/cmTC_756dd.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_756dd.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/mpicxx      -o CMakeFiles/cmTC_756dd.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_756dd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_756dd.dir/link.txt --verbose=1
+/usr/bin/mpicxx       -v CMakeFiles/cmTC_756dd.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_756dd -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/usr/bin/g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.1-2ubuntu1~16.04' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 5.4.1 20160904 (Ubuntu 5.4.1-2ubuntu1~16.04) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_756dd' '-rdynamic' '-I' '/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent' '-I' '/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include' '-I' '/usr/lib/openmpi/include' '-I' '/usr/lib/openmpi/include/openmpi' '-pthread' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cczvwYIK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_756dd /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/openmpi/lib -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_756dd.dir/CMakeCXXCompilerABI.cpp.o -rpath /usr/lib/openmpi/lib --enable-new-dtags -lmpi_cxx -lmpi -lstdc++ -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_756dd/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_756dd.dir/build.make CMakeFiles/cmTC_756dd.dir/build]
+  ignore line: [make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_756dd.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/mpicxx      -o CMakeFiles/cmTC_756dd.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_756dd]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_756dd.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/mpicxx       -v CMakeFiles/cmTC_756dd.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_756dd -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.1-2ubuntu1~16.04' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 5.4.1 20160904 (Ubuntu 5.4.1-2ubuntu1~16.04) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_756dd' '-rdynamic' '-I' '/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent' '-I' '/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include' '-I' '/usr/lib/openmpi/include' '-I' '/usr/lib/openmpi/include/openmpi' '-pthread' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cczvwYIK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_756dd /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/openmpi/lib -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_756dd.dir/CMakeCXXCompilerABI.cpp.o -rpath /usr/lib/openmpi/lib --enable-new-dtags -lmpi_cxx -lmpi -lstdc++ -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cczvwYIK.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_756dd] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/openmpi/lib] ==> dir [/usr/lib/openmpi/lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
+    arg [CMakeFiles/cmTC_756dd.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/usr/lib/openmpi/lib] ==> ignore
+    arg [--enable-new-dtags] ==> ignore
+    arg [-lmpi_cxx] ==> lib [mpi_cxx]
+    arg [-lmpi] ==> lib [mpi]
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse library dir [/usr/lib/openmpi/lib] ==> [/usr/lib/openmpi/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5] ==> [/usr/lib/gcc/x86_64-linux-gnu/5]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> [/usr/lib]
+  implicit libs: [mpi_cxx;mpi;stdc++;m;pthread;c]
+  implicit dirs: [/usr/lib/openmpi/lib;/usr/lib/gcc/x86_64-linux-gnu/5;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7a237/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7a237.dir/build.make CMakeFiles/cmTC_7a237.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_7a237.dir/feature_tests.cxx.o
+/usr/bin/mpicxx     -std=c++14 -o CMakeFiles/cmTC_7a237.dir/feature_tests.cxx.o -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_7a237
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a237.dir/link.txt --verbose=1
+/usr/bin/mpicxx        CMakeFiles/cmTC_7a237.dir/feature_tests.cxx.o  -o cmTC_7a237 -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b4d93/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b4d93.dir/build.make CMakeFiles/cmTC_b4d93.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b4d93.dir/feature_tests.cxx.o
+/usr/bin/mpicxx     -std=c++11 -o CMakeFiles/cmTC_b4d93.dir/feature_tests.cxx.o -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_b4d93
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b4d93.dir/link.txt --verbose=1
+/usr/bin/mpicxx        CMakeFiles/cmTC_b4d93.dir/feature_tests.cxx.o  -o cmTC_b4d93 -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a7e4a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a7e4a.dir/build.make CMakeFiles/cmTC_a7e4a.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a7e4a.dir/feature_tests.cxx.o
+/usr/bin/mpicxx     -std=c++98 -o CMakeFiles/cmTC_a7e4a.dir/feature_tests.cxx.o -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a7e4a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a7e4a.dir/link.txt --verbose=1
+/usr/bin/mpicxx        CMakeFiles/cmTC_a7e4a.dir/feature_tests.cxx.o  -o cmTC_a7e4a -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates
+Compiling the Fortran compiler identification source file "CMakeFortranCompilerId.F" succeeded.
+Compiler: /usr/bin/mpif90 
+Build flags: 
+Id flags: -v
+
+The output was:
+0
+Driving: /usr/bin/gfortran -v CMakeFortranCompilerId.F -I/usr/lib/openmpi/include -pthread -I/usr/lib/openmpi/lib -Wl,-rpath -Wl,/usr/lib/openmpi/lib -Wl,--enable-new-dtags -L/usr/lib/openmpi/lib -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -l gfortran -l m -shared-libgcc
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gfortran
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.1-2ubuntu1~16.04' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 5.4.1 20160904 (Ubuntu 5.4.1-2ubuntu1~16.04) 
+COLLECT_GCC_OPTIONS='-v' '-I' '/usr/lib/openmpi/include' '-pthread' '-I' '/usr/lib/openmpi/lib' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/f951 CMakeFortranCompilerId.F -ffixed-form -cpp=/tmp/cchmbOcD.f90 -quiet -v -I /usr/lib/openmpi/include -I /usr/lib/openmpi/lib -imultiarch x86_64-linux-gnu -D_REENTRANT CMakeFortranCompilerId.F -quiet -dumpbase CMakeFortranCompilerId.F -mtune=generic -march=x86-64 -auxbase CMakeFortranCompilerId -version -fintrinsic-modules-path /usr/lib/gcc/x86_64-linux-gnu/5/finclude -o /tmp/ccEEckIn.s
+GNU Fortran (Ubuntu 5.4.1-2ubuntu1~16.04) version 5.4.1 20160904 (x86_64-linux-gnu)
+	compiled by GNU C version 5.4.1 20160904, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/5/../../../../x86_64-linux-gnu/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/openmpi/include
+ /usr/lib/openmpi/lib
+ /usr/lib/gcc/x86_64-linux-gnu/5/finclude
+ /usr/lib/gcc/x86_64-linux-gnu/5/include
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/5/include-fixed
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+GNU Fortran2008 (Ubuntu 5.4.1-2ubuntu1~16.04) version 5.4.1 20160904 (x86_64-linux-gnu)
+	compiled by GNU C version 5.4.1 20160904, GMP version 6.1.0, MPFR version 3.1.4, MPC version 1.0.3
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+COLLECT_GCC_OPTIONS='-v' '-I' '/usr/lib/openmpi/include' '-pthread' '-I' '/usr/lib/openmpi/lib' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v -I /usr/lib/openmpi/include -I /usr/lib/openmpi/lib --64 -o /tmp/ccPSpty8.o /tmp/ccEEckIn.s
+GNU assembler version 2.26.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.26.1
+Reading specs from /usr/lib/gcc/x86_64-linux-gnu/5/libgfortran.spec
+rename spec lib to liborig
+COLLECT_GCC_OPTIONS='-v' '-I' '/usr/lib/openmpi/include' '-pthread' '-I' '/usr/lib/openmpi/lib' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-I' '/usr/lib/openmpi/include' '-pthread' '-I' '/usr/lib/openmpi/lib' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0QvupT.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/openmpi/lib -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. /tmp/ccPSpty8.o -rpath /usr/lib/openmpi/lib --enable-new-dtags -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+
+
+Compilation of the Fortran compiler identification source "CMakeFortranCompilerId.F" produced "a.out"
+
+The Fortran compiler identification is GNU, found in "/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/3.5.1/CompilerIdFortran/a.out"
+
+Determining if the Fortran compiler works passed with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_73691/fast"
+/usr/bin/make -f CMakeFiles/cmTC_73691.dir/build.make CMakeFiles/cmTC_73691.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_73691.dir/testFortranCompiler.f.o
+/usr/bin/mpif90     -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/testFortranCompiler.f -o CMakeFiles/cmTC_73691.dir/testFortranCompiler.f.o
+Linking Fortran executable cmTC_73691
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73691.dir/link.txt --verbose=1
+/usr/bin/mpif90       CMakeFiles/cmTC_73691.dir/testFortranCompiler.f.o  -o cmTC_73691  
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+Detecting Fortran compiler ABI info compiled with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_06b21/fast"
+/usr/bin/make -f CMakeFiles/cmTC_06b21.dir/build.make CMakeFiles/cmTC_06b21.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o
+/usr/bin/mpif90     -c /usr/share/cmake-3.5/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o
+Linking Fortran executable cmTC_06b21
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06b21.dir/link.txt --verbose=1
+/usr/bin/mpif90    -v   CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o  -o cmTC_06b21   
+Driving: /usr/bin/gfortran -v CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o -o cmTC_06b21 -I/usr/lib/openmpi/include -pthread -I/usr/lib/openmpi/lib -Wl,-rpath -Wl,/usr/lib/openmpi/lib -Wl,--enable-new-dtags -L/usr/lib/openmpi/lib -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -l gfortran -l m -shared-libgcc
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gfortran
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.1-2ubuntu1~16.04' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 5.4.1 20160904 (Ubuntu 5.4.1-2ubuntu1~16.04) 
+Reading specs from /usr/lib/gcc/x86_64-linux-gnu/5/libgfortran.spec
+rename spec lib to liborig
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_06b21' '-I' '/usr/lib/openmpi/include' '-pthread' '-I' '/usr/lib/openmpi/lib' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_06b21' '-I' '/usr/lib/openmpi/include' '-pthread' '-I' '/usr/lib/openmpi/lib' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUK0a3j.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_06b21 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/openmpi/lib -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o -rpath /usr/lib/openmpi/lib --enable-new-dtags -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+Parsed Fortran implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_06b21/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_06b21.dir/build.make CMakeFiles/cmTC_06b21.dir/build]
+  ignore line: [make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp']
+  ignore line: [Building Fortran object CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [/usr/bin/mpif90     -c /usr/share/cmake-3.5/Modules/CMakeFortranCompilerABI.F -o CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o]
+  ignore line: [Linking Fortran executable cmTC_06b21]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_06b21.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/mpif90    -v   CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o  -o cmTC_06b21   ]
+  ignore line: [Driving: /usr/bin/gfortran -v CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o -o cmTC_06b21 -I/usr/lib/openmpi/include -pthread -I/usr/lib/openmpi/lib -Wl,-rpath -Wl,/usr/lib/openmpi/lib -Wl,--enable-new-dtags -L/usr/lib/openmpi/lib -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -l gfortran -l m -shared-libgcc]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/gfortran]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.1-2ubuntu1~16.04' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 5.4.1 20160904 (Ubuntu 5.4.1-2ubuntu1~16.04) ]
+  ignore line: [Reading specs from /usr/lib/gcc/x86_64-linux-gnu/5/libgfortran.spec]
+  ignore line: [rename spec lib to liborig]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_06b21' '-I' '/usr/lib/openmpi/include' '-pthread' '-I' '/usr/lib/openmpi/lib' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_06b21' '-I' '/usr/lib/openmpi/include' '-pthread' '-I' '/usr/lib/openmpi/lib' '-L/usr/lib/openmpi/lib' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccUK0a3j.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lquadmath -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_06b21 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/openmpi/lib -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o -rpath /usr/lib/openmpi/lib --enable-new-dtags -lmpi_usempif08 -lmpi_usempi_ignore_tkr -lmpi_mpifh -lmpi -lgfortran -lm -lgcc_s -lgcc -lquadmath -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccUK0a3j.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lquadmath] ==> ignore
+    arg [-plugin-opt=-pass-through=-lm] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_06b21] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
+    arg [-L/usr/lib/openmpi/lib] ==> dir [/usr/lib/openmpi/lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
+    arg [CMakeFiles/cmTC_06b21.dir/CMakeFortranCompilerABI.F.o] ==> ignore
+    arg [-rpath] ==> ignore
+    arg [/usr/lib/openmpi/lib] ==> ignore
+    arg [--enable-new-dtags] ==> ignore
+    arg [-lmpi_usempif08] ==> lib [mpi_usempif08]
+    arg [-lmpi_usempi_ignore_tkr] ==> lib [mpi_usempi_ignore_tkr]
+    arg [-lmpi_mpifh] ==> lib [mpi_mpifh]
+    arg [-lmpi] ==> lib [mpi]
+    arg [-lgfortran] ==> lib [gfortran]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lquadmath] ==> lib [quadmath]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lpthread] ==> lib [pthread]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtend.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse library dir [/usr/lib/openmpi/lib] ==> [/usr/lib/openmpi/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5] ==> [/usr/lib/gcc/x86_64-linux-gnu/5]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> [/usr/lib]
+  implicit libs: [mpi_usempif08;mpi_usempi_ignore_tkr;mpi_mpifh;mpi;gfortran;m;quadmath;m;pthread;c]
+  implicit dirs: [/usr/lib/openmpi/lib;/usr/lib/gcc/x86_64-linux-gnu/5;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+Determining if the Fortran compiler supports Fortran 90 passed with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_42948/fast"
+/usr/bin/make -f CMakeFiles/cmTC_42948.dir/build.make CMakeFiles/cmTC_42948.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_42948.dir/testFortranCompilerF90.f90.o
+/usr/bin/mpif90     -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/testFortranCompilerF90.f90 -o CMakeFiles/cmTC_42948.dir/testFortranCompilerF90.f90.o
+Linking Fortran executable cmTC_42948
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42948.dir/link.txt --verbose=1
+/usr/bin/mpif90       CMakeFiles/cmTC_42948.dir/testFortranCompilerF90.f90.o  -o cmTC_42948  
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2762a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_2762a.dir/build.make CMakeFiles/cmTC_2762a.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2762a.dir/src.c.o
+/usr/bin/mpicc    -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTC_2762a.dir/src.c.o   -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_2762a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2762a.dir/link.txt --verbose=1
+/usr/bin/mpicc   -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTC_2762a.dir/src.c.o  -o cmTC_2762a -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1f727/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1f727.dir/build.make CMakeFiles/cmTC_1f727.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1f727.dir/src.cxx.o
+/usr/bin/mpicxx     -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTC_1f727.dir/src.cxx.o -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_1f727
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1f727.dir/link.txt --verbose=1
+/usr/bin/mpicxx    -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTC_1f727.dir/src.cxx.o  -o cmTC_1f727 -rdynamic 
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing Fortran SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_db59e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_db59e.dir/build.make CMakeFiles/cmTC_db59e.dir/build
+make[1]: Entering directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_db59e.dir/src.F.o
+/usr/bin/mpif90    -DOpenMP_FLAG_DETECTED -fopenmp   -c /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp/src.F -o CMakeFiles/cmTC_db59e.dir/src.F.o
+Linking Fortran executable cmTC_db59e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db59e.dir/link.txt --verbose=1
+/usr/bin/mpif90      -DOpenMP_FLAG_DETECTED -fopenmp CMakeFiles/cmTC_db59e.dir/src.F.o  -o cmTC_db59e  
+make[1]: Leaving directory '/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+      program test
+      use omp_lib
+      integer :: n
+      n = omp_get_num_threads()
+      end program test
+  
