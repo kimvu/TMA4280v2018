@@ -213,14 +213,14 @@ real rhs(real x, real y) {
 // Denne er viktig, her er alt i loopen i samme prosess, vær nøye her. Må flippes, transponereres
 void transpose(real **bt, real **b, size_t m)
 {
-/*
+
   for (size_t i = 0; i < m; i++) {
       for (size_t j = 0; j < m; j++) {
           bt[i][j] = b[j][i];
       }
   }
-  */
 
+/*
     sendcounts = (int *)malloc( mpi_size * sizeof(int) );
     recvcounts = (int *)malloc( mpi_size * sizeof(int) );
     rdispls = (int *)malloc( mpi_size * sizeof(int) );
@@ -228,8 +228,9 @@ void transpose(real **bt, real **b, size_t m)
 
 
     MPI_Alltoallv( sbuf, sendcounts, sdispls, MPI_DOUBLE, rbuf, recvcounts, rdispls, matrixcolumntype, MPI_COMM_WORLD );
-
-    /*jallaversjon
+*/
+    //jallaversjon
+    /*
     int i, j, row, col;
     int blocksize = 16;
 
