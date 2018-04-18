@@ -36,6 +36,14 @@ real rhs(real x, real y);
 void fst_(real *v, int *n, real *w, int *nn);
 void fstinv_(real *v, int *n, real *w, int *nn);
 
+int *sendcounts;
+int *recvcounts;
+int *rdispls;
+int *sdispls;
+
+// MPI Datatypes
+MPI_Datatype m_column;
+MPI_Datatype m_columntype;
 
 int main(int argc, char **argv)
 {
@@ -51,6 +59,8 @@ int main(int argc, char **argv)
         printf("  n: the problem size (must be a power of 2)\n");
     }
 
+
+
     /*
      *  The equation is solved on a 2D structured grid and homogeneous Dirichlet
      *  conditions are applied on the boundary:
@@ -63,10 +73,71 @@ int main(int argc, char **argv)
     int m = n - 1;
     real h = 1.0 / n;
 
+    //-----------------------------------------------------------------------------------------------------------------
+    // Allocate space
+    int *fromarray = (int*) malloc (mpi_size * sizeof (int));
+    int *toarray = (int*) malloc (mpi_size * sizeof (int));
+    int *adderarray = (int*) malloc (mpi_size * sizeof (int));
+
+    // Calculate the number of rows per process and the remainder
+    int list_div = m / mpi_size;
+    int list_rem = m % mpi_size;
+
+    // Calculate to and from row index for each process
+    for (int i = 0; i < mpi_size; i++)
+    {
+      // Calculate offset due to remainder in previous processes
+      int offset = i < list_rem ? i : list_rem;
+
+      // Calculate an adder for the number of rows we need to do
+      adderarray[i] = i < list_rem ? 1 : 0;
+
+      // Calculate the start
+      fromarray[i] = i * list_div + offset;
+
+      // Calculate the end
+      toarray[i] = fromarray[i] + list_div + adderarray[i];
+    }
+
+    // Set my from and to
+    //TODO HUSK Å SETTE DEM I FOR LØKKER
+    int from = fromarray[mpi_rank];
+    int to = toarray[mpi_rank];
+
+    // Store m and nprocs
+    int list_m = m;
+    int list_nprocs = mpi_size;
+    //-----------------------------------------------------------------------------------------------------------------
+    sendcounts = (int *)malloc( mpi_size * sizeof(int) );
+    recvcounts = (int *)malloc( mpi_size * sizeof(int) );
+    rdispls = (int *)malloc( mpi_size * sizeof(int) );
+    sdispls = (int *)malloc( mpi_size * sizeof(int) );
+
+    for (int i = 0; i < mpi_size;i++){
+      // Get the number of rows to send
+      int num_row = to - from;
+      sendcounts[i] = num_row * m;
+      sdispls[i] = from * m;
+      recvcounts[i] = toarray[i] - fromarray[i];
+      rdispls[i] = fromarray[i];
+
+      MPI_Type_vector (m, 1, m, MPI_DOUBLE, &m_column);
+      MPI_Type_commit (&m_column);
+      MPI_Type_create_resized (m_column, 0, sizeof(double), &m_columntype);
+      MPI_Type_commit (&m_columntype);
+    }
+
     /*
      * Grid points are generated with constant mesh size on both x- and y-axis.
      */
     real *grid = mk_1D_array(n+1, false);
+
+
+
+
+
+
+
 #pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < n+1; i++) {
         grid[i] = i * h;
@@ -195,6 +266,14 @@ int main(int argc, char **argv)
     }
     MPI_Finalize ();
     return 0;
+
+    free(sendcounts);
+    free(recvcounts);
+    free(rdispls);
+    free(sdispls);
+    free (fromarray);
+    free (toarray);
+    free (adderarray);
 }
 
 /*
@@ -214,22 +293,16 @@ real rhs(real x, real y) {
 // Denne er viktig, her er alt i loopen i samme prosess, vær nøye her. Må flippes, transponereres
 void transpose(real **bt, real **b, size_t m)
 {
-
+/*
   for (size_t i = 0; i < m; i++) {
       for (size_t j = 0; j < m; j++) {
           bt[i][j] = b[j][i];
       }
   }
-
-/*
-    sendcounts = (int *)malloc( mpi_size * sizeof(int) );
-    recvcounts = (int *)malloc( mpi_size * sizeof(int) );
-    rdispls = (int *)malloc( mpi_size * sizeof(int) );
-    sdispls = (int *)malloc( mpi_size * sizeof(int) );
-
-
-    MPI_Alltoallv( sbuf, sendcounts, sdispls, MPI_DOUBLE, rbuf, recvcounts, rdispls, matrixcolumntype, MPI_COMM_WORLD );
 */
+
+    MPI_Alltoallv( b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, m_columntype, MPI_COMM_WORLD );
+
     //jallaversjon
     /*
     int i, j, row, col;
