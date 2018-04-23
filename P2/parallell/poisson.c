@@ -264,6 +264,34 @@ int main(int argc, char **argv)
     if(mpi_rank == 0){
         printf("u_max = %e\n", u_max_after_reduce);
     }
+    //Calculating error from appendix B
+    // Global max and my max
+    double maxerr = 0.0;
+
+    // Calculate local max error
+    for (int i = from; i < to; i++)
+    {
+    	for (int j = 0; j < m; j++)
+    	{
+    		double error = answer(grid[i+1], grid[j+1]) - b[i][j];
+
+    		if (error < 0.0){
+    			error = -error;
+        }
+
+    		if (error > maxerr)
+          maxerr = error;
+        }
+    	}
+    }
+
+    MPI_Allreduce (&maxerr, &u_max, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
+
+
+    if (mpi_rank == 0){
+      printf ("Largest error encountered: %e\n", u_max);
+    }
+
     MPI_Finalize ();
     return 0;
 
@@ -284,7 +312,9 @@ int main(int argc, char **argv)
 real rhs(real x, real y) {
     return 2 * (y - y*y + x - x*x);
 }
-
+real answer(real x, real y) {
+    return sin(PI * x) * sin(2 * PI * y);
+}
 /*
  * Write the transpose of b a matrix of R^(m*m) in bt.
  * In parallel the function MPI_Alltoallv is used to map directly the entries
