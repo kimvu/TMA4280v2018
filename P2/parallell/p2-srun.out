@@ -1,4 +1,4 @@
 u_max = 6.250000e-02
-Largest error encountered: 1.046875e+00
-Time: 0.199441
+Largest error encountered: 1.047070e+00
+Time: 17.308268
 Linux compute-1-0-1.foreman.hpc.ntnu.no 3.10.0-693.17.1.el7.x86_64 #1 SMP Thu Jan 25 20:13:58 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux

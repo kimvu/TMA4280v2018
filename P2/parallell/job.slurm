@@ -11,6 +11,6 @@
 #SBATCH --mail-user=kimlv@ntnu.no
 #SBATCH --mail-type=ALL
 
-mpirun -np 8 ./poisson 128 4
+mpirun -np 8 ./poisson 2048 4
 
 uname -a
