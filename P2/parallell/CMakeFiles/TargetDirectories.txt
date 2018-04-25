@@ -1,3 +1,5 @@
-/home/kimlv/TMA4280v2018/P2/parallell/CMakeFiles/common.dir
-/home/kimlv/TMA4280v2018/P2/parallell/CMakeFiles/poisson.dir
-/home/kimlv/TMA4280v2018/P2/parallell/CMakeFiles/poisson-f.dir
+/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/edit_cache.dir
+/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/common.dir
+/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/poisson-f.dir
+/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/poisson.dir
+/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/rebuild_cache.dir

@@ -193,7 +193,7 @@ int main(int argc, char **argv)
      *
      */
 #pragma omp parallel for num_threads(n_threads) schedule(static)
-    for (size_t i = 0; i < m; i++) {
+    for (size_t i = from; i < to; i++) {
         for (size_t j = 0; j < m; j++) {
             b[i][j] = h * h * rhs(grid[i+1], grid[j+1]);
         }
@@ -211,14 +211,14 @@ int main(int argc, char **argv)
      */
 // TODO
 #pragma omp parallel for num_threads(n_threads) schedule(static)
-    for (size_t i = 0; i < m; i++) {
+    for (size_t i = from; i < to; i++) {
         fst_(b[i], &n, z[omp_get_thread_num()], &nn);
     }
     transpose(bt, b, m);
 
 // TODO
 #pragma omp parallel for num_threads(n_threads) schedule(static)
-    for (size_t i = 0; i < m; i++) {
+    for (size_t i = from; i < to; i++) {
       fstinv_(bt[i], &n, z[omp_get_thread_num()], &nn);
     }
 
@@ -226,7 +226,7 @@ int main(int argc, char **argv)
      * Solve Lambda * \tilde U = \tilde G (Chapter 9. page 101 step 2)
      */
 #pragma omp parallel for num_threads(n_threads) schedule(static)
-    for (size_t i = 0; i < m; i++) {
+    for (size_t i = from; i < to; i++) {
         for (size_t j = 0; j < m; j++) {
             bt[i][j] = bt[i][j] / (diag[i] + diag[j]);
         }
@@ -237,7 +237,7 @@ int main(int argc, char **argv)
      */
 // TODO
 #pragma omp parallel for num_threads(n_threads) schedule(static)
-    for (size_t i = 0; i < m; i++) {
+    for (size_t i = from; i < to; i++) {
       fst_(bt[i], &n, z[omp_get_thread_num()], &nn);
     }
 
@@ -245,7 +245,7 @@ int main(int argc, char **argv)
 
 // TODO
  #pragma omp parallel for num_threads(n_threads) schedule(static)
-    for (size_t i = 0; i < m; i++) {
+    for (size_t i = from; i < to; i++) {
       fstinv_(b[i], &n, z[omp_get_thread_num()], &nn);
         //fstinv_(b[i], &n, z, &nn);
     }

@@ -1,28 +1,31 @@
 # The set of languages for which implicit dependencies are needed:
-SET(CMAKE_DEPENDS_LANGUAGES
+set(CMAKE_DEPENDS_LANGUAGES
   "C"
   )
 # The set of files for implicit dependencies of each language:
-SET(CMAKE_DEPENDS_CHECK_C
-  "/home/kimlv/TMA4280v2018/P2/parallell/poisson.c" "/home/kimlv/TMA4280v2018/P2/parallell/CMakeFiles/poisson.dir/poisson.c.o"
+set(CMAKE_DEPENDS_CHECK_C
+  "/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/poisson.c" "/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/poisson.dir/poisson.c.o"
   )
-SET(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
-SET(CMAKE_TARGET_DEFINITIONS
+set(CMAKE_TARGET_DEFINITIONS_C
   "HAVE_MPI=1"
   "HAVE_OPENMP=1"
   )
 
-# Targets to which this target links.
-SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/kimlv/TMA4280v2018/P2/parallell/CMakeFiles/common.dir/DependInfo.cmake"
+# The include file search paths:
+set(CMAKE_C_TARGET_INCLUDE_PATH
+  "/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent"
+  "/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include"
+  "/usr/lib/openmpi/include"
+  "/usr/lib/openmpi/include/openmpi"
   )
 
-# The include file search paths:
-SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "/share/apps/software/Compiler/GCC/6.4.0-2.28/OpenMPI/2.1.2/include"
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/common.dir/DependInfo.cmake"
   )
-SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
-SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
-SET(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")
