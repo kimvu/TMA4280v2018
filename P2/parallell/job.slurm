@@ -11,10 +11,6 @@
 #SBATCH --mail-user=kimlv@ntnu.no
 #SBATCH --mail-type=ALL
 
-module purge
-module load GCC
-module load OpenMPI
-CC=mpicc FC=pmif90 cmake . -DCMAKE_BUILD_TYPE=Release
 mpirun -np 8 ./poisson 128 4
 
 uname -a
