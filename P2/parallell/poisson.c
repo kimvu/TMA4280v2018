@@ -59,7 +59,10 @@ int main(int argc, char **argv)
         printf("Arguments:\n");
         printf("  n: the problem size (must be a power of 2)\n");
     }
-
+    double time1 = 0.0;
+    if(mpi_rank == 0){
+        time1 = MPI_Wtime();
+    }
 
 
     /*
@@ -270,7 +273,7 @@ int main(int argc, char **argv)
     double maxerr = 0.0;
 
     // Calculate local max error
-    for (int i = ; i < (n/mpi_size); i++)
+    for (int i = from; i < to; i++)
     {
     	for (int j = 0; j < m; j++)
     	{
@@ -283,6 +286,11 @@ int main(int argc, char **argv)
 
     if (mpi_rank == 0){
       printf ("Largest error encountered: %e\n", error_u_max);
+    }
+
+    if(mpi_rank == 0){
+        double time_final = MPI_Wtime() - time1;
+        printf("Time: %f\n", time_final);
     }
 
     MPI_Finalize ();
