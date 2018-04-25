@@ -29,6 +29,7 @@ real *mk_1D_array(size_t n, bool zero);
 real **mk_2D_array(size_t n1, size_t n2, bool zero);
 void transpose(real **bt, real **b, size_t m);
 real rhs(real x, real y);
+real answer(real x, real y);
 
 // Functions implemented in FORTRAN in fst.f and called from C.
 // The trailing underscore comes from a convention for symbol names, called name
@@ -269,27 +270,19 @@ int main(int argc, char **argv)
     double maxerr = 0.0;
 
     // Calculate local max error
-    for (int i = from; i < to; i++)
+    for (int i = 0; i < (n/mpi_size); i++)
     {
     	for (int j = 0; j < m; j++)
     	{
-    		double error = answer(grid[i+1], grid[j+1]) - b[i][j];
-
-    		if (error < 0.0){
-    			error = -error;
-        }
-
-    		if (error > maxerr)
-          maxerr = error;
-        }
+    		real error = fabs(answer(grid[i+1], grid[j+1]) - b[i][j]);
+        maxerr = maxerr > error ? maxerr : error;
     	}
     }
-
-    MPI_Allreduce (&maxerr, &u_max, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
-
+    double error_u_max = 0.0;
+    MPI_Allreduce (&maxerr, &error_u_max, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
 
     if (mpi_rank == 0){
-      printf ("Largest error encountered: %e\n", u_max);
+      printf ("Largest error encountered: %e\n", error_u_max);
     }
 
     MPI_Finalize ();
