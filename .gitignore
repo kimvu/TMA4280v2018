@@ -9,3 +9,5 @@ cmake_install.cmake
 # poisson compiled files
 poisson
 poisson-f
+
+p2-srun.out
