@@ -255,7 +255,7 @@ int main(int argc, char **argv)
 
 // TODO Doesn't these two do the same? One with omp, other with MPI?
 #pragma omp parallel for num_threads(n_threads) reduction(max: u_max)
-    for (size_t i = 0; i < m; i++) {
+    for (size_t i = from; i < to; i++) {
         for (size_t j = 0; j < m; j++) {
             u_max = u_max > b[i][j] ? u_max : b[i][j];
         }
@@ -270,7 +270,7 @@ int main(int argc, char **argv)
     double maxerr = 0.0;
 
     // Calculate local max error
-    for (int i = 0; i < (n/mpi_size); i++)
+    for (int i = ; i < (n/mpi_size); i++)
     {
     	for (int j = 0; j < m; j++)
     	{
