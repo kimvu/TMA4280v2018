@@ -263,9 +263,9 @@ int main(int argc, char **argv)
     // Completed time
     if(mpi_rank == 0){
 			  printf("u_max = %e\n", u_max_after_reduce);
-				printf ("Largest error encountered: %e\n", error_u_max);
+				printf ("error: %e\n", error_u_max);
         double time_final = MPI_Wtime() - time1;
-        printf("Time: %f\n", time_final);
+        printf("time: %f\n", time_final);
     }
 
     free(sendcounts);
@@ -285,6 +285,7 @@ int main(int argc, char **argv)
  */
 
 real rhs(real x, real y) {
+		// return exp(x) * sin(2 * PI * x) * sin(2 * PI * y);
     //return 2 * (y - y*y + x - x*x);
     return 5.0 * PI * PI * sin (PI * x) * sin (2.0 * PI * y);
 }
