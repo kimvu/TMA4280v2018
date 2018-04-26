@@ -1,4 +1,4 @@
-# Install script for directory: /home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell
+# Install script for directory: /home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

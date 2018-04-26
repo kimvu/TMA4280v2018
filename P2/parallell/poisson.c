@@ -242,41 +242,28 @@ int main(int argc, char **argv)
      * norm.
      */
     double u_max = 0.0;
-
+		double maxerr = 0.0;
 // TODO Doesn't these two do the same? One with omp, other with MPI? Check this
-#pragma omp parallel for num_threads(n_threads) reduction(max: u_max)
+#pragma omp parallel for num_threads(n_threads) collapse(2)
     for (size_t i = from; i < to; i++) {
         for (size_t j = 0; j < m; j++) {
-            u_max = u_max > b[i][j] ? u_max : b[i][j];
+						//Calculating u_max
+						u_max = u_max > b[i][j] ? u_max : b[i][j];
+						//Calculating error, from appendix B
+						real error = fabs(answer(grid[i+1], grid[j+1]) - b[i][j]);
+						maxerr = maxerr > error ? maxerr : error;
         }
     }
     double u_max_after_reduce = 0.0;
     MPI_Allreduce(&u_max, &u_max_after_reduce, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
 
-    if(mpi_rank == 0){
-        printf("u_max = %e\n", u_max_after_reduce);
-    }
-
-    //Calculating error, from appendix B
-    double maxerr = 0.0;
-
-    for (int i = from; i < to; i++)
-    {
-    	for (int j = 0; j < m; j++)
-    	{
-    		real error = fabs(answer(grid[i+1], grid[j+1]) - b[i][j]);
-            maxerr = maxerr > error ? maxerr : error;
-    	}
-    }
     double error_u_max = 0.0;
-    MPI_Allreduce (&maxerr, &error_u_max, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
-
-    if(mpi_rank == 0){
-      printf ("Largest error encountered: %e\n", error_u_max);
-    }
+    MPI_Allreduce(&maxerr, &error_u_max, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
 
     // Completed time
     if(mpi_rank == 0){
+			  printf("u_max = %e\n", u_max_after_reduce);
+				printf ("Largest error encountered: %e\n", error_u_max);
         double time_final = MPI_Wtime() - time1;
         printf("Time: %f\n", time_final);
     }
