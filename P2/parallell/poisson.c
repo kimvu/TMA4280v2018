@@ -21,8 +21,6 @@
 
 typedef double real;
 typedef int bool;
-//Global variables
-int mpi_size, mpi_rank;
 
 // Function prototypes
 real *mk_1D_array(size_t n, bool zero);
@@ -37,18 +35,25 @@ real answer(real x, real y);
 void fst_(real *v, int *n, real *w, int *nn);
 void fstinv_(real *v, int *n, real *w, int *nn);
 
+// Send/receice counts and displacements
 int *sendcounts;
 int *recvcounts;
 int *rdispls;
 int *sdispls;
 
+// from/to for each processor
+int *from_proc;
+int *to_proc;
+
 // MPI Datatypes
 MPI_Datatype m_column;
 MPI_Datatype m_columntype;
 
+
 int main(int argc, char **argv)
 {
     // Initializing MPI
+    int mpi_size, mpi_rank;
     MPI_Init(NULL, NULL);
     MPI_Comm_size(MPI_COMM_WORLD, &mpi_size);
     MPI_Comm_rank(MPI_COMM_WORLD, &mpi_rank);
@@ -59,11 +64,12 @@ int main(int argc, char **argv)
         printf("Arguments:\n");
         printf("  n: the problem size (must be a power of 2)\n");
     }
-    double time1 = 0.0;
+
+    // Start Time
+    double time1;
     if(mpi_rank == 0){
         time1 = MPI_Wtime();
     }
-
 
     /*
      *  The equation is solved on a 2D structured grid and homogeneous Dirichlet
@@ -77,54 +83,40 @@ int main(int argc, char **argv)
     int m = n - 1;
     real h = 1.0 / n;
 
-    //-----------------------------------------------------------------------------------------------------------------
-    // Allocate space
-    int *fromarray = (int*) malloc (mpi_size * sizeof (int));
-    int *toarray = (int*) malloc (mpi_size * sizeof (int));
-    int *adderarray = (int*) malloc (mpi_size * sizeof (int));
+    // Allocating memory, for load balancing
+    from_proc = (int*) malloc (mpi_size * sizeof (int));
+    to_proc = (int*) malloc (mpi_size * sizeof (int));
 
-    // Calculate the number of rows per process and the remainder
-    int list_div = m / mpi_size;
-    int list_rem = m % mpi_size;
-
-    // Calculate to and from row index for each process
-    for (int i = 0; i < mpi_size; i++)
-    {
-      // Calculate offset due to remainder in previous processes
-      int offset = i < list_rem ? i : list_rem;
-
-      // Calculate an adder for the number of rows we need to do
-      adderarray[i] = i < list_rem ? 1 : 0;
-
-      // Calculate the start
-      fromarray[i] = i * list_div + offset;
-
-      // Calculate the end
-      toarray[i] = fromarray[i] + list_div + adderarray[i];
-    }
-
-    // Set my from and to
-    //TODO HUSK Å SETTE DEM I FOR LØKKER
-    int from = fromarray[mpi_rank];
-    int to = toarray[mpi_rank];
-
-    // Store m and nprocs
-    int list_m = m;
-    int list_nprocs = mpi_size;
-    //-----------------------------------------------------------------------------------------------------------------
+    // Allocating memory, for the transposing
     sendcounts = (int *)malloc( mpi_size * sizeof(int) );
     recvcounts = (int *)malloc( mpi_size * sizeof(int) );
     rdispls = (int *)malloc( mpi_size * sizeof(int) );
     sdispls = (int *)malloc( mpi_size * sizeof(int) );
 
+    // Rows in each process
+    int num_row = m / mpi_size;
+    int row_rem = m % mpi_size;
+
+    // Calculating from and to
+    for (int i = 0; i < mpi_size; i++)
+    {
+      from_proc[i] = i * num_row + (i < row_rem ? i : row_rem);
+      to_proc[i] = from_proc[i] + num_row + (i < row_rem ? 1 : 0);
+    }
+
+    //TODO HUSK Å SETTE DEM I FOR LØKKER
+    int from = from_proc[mpi_rank];
+    int to = to_proc[mpi_rank];
+
+    // Assigns work load for each process
     for (int i = 0; i < mpi_size;i++){
-      // Get the number of rows to send
       int num_row = to - from;
       sendcounts[i] = num_row * m;
       sdispls[i] = from * m;
-      recvcounts[i] = toarray[i] - fromarray[i];
-      rdispls[i] = fromarray[i];
+      recvcounts[i] = to_proc[i] - from_proc[i];
+      rdispls[i] = from_proc[i];
 
+    // Initializing MPI matrix
       MPI_Type_vector (m, 1, m, MPI_DOUBLE, &m_column);
       MPI_Type_commit (&m_column);
       MPI_Type_create_resized (m_column, 0, sizeof(double), &m_columntype);
@@ -135,12 +127,6 @@ int main(int argc, char **argv)
      * Grid points are generated with constant mesh size on both x- and y-axis.
      */
     real *grid = mk_1D_array(n+1, false);
-
-
-
-
-
-
 
 #pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = 0; i < n+1; i++) {
@@ -185,14 +171,13 @@ int main(int argc, char **argv)
     for (int i = 0; i < n_threads; i++)
     		z[i] = mk_1D_array(nn, false);
 
-
     /*
      * Initialize the right hand side data for a given rhs function.
      * Note that the right hand-side is set at nodes corresponding to degrees
      * of freedom, so it excludes the boundary (bug fixed by petterjf 2017).
      *
      */
-#pragma omp parallel for num_threads(n_threads) schedule(static)
+#pragma omp parallel for num_threads(n_threads) schedule(static) collapse(2)
     for (size_t i = from; i < to; i++) {
         for (size_t j = 0; j < m; j++) {
             b[i][j] = h * h * rhs(grid[i+1], grid[j+1]);
@@ -209,14 +194,13 @@ int main(int argc, char **argv)
      * In functions fst_ and fst_inv_ coefficients are written back to the input
      * array (first argument) so that the initial values are overwritten.
      */
-// TODO
+
 #pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = from; i < to; i++) {
         fst_(b[i], &n, z[omp_get_thread_num()], &nn);
     }
     transpose(bt, b, m);
 
-// TODO
 #pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = from; i < to; i++) {
       fstinv_(bt[i], &n, z[omp_get_thread_num()], &nn);
@@ -225,7 +209,7 @@ int main(int argc, char **argv)
     /*
      * Solve Lambda * \tilde U = \tilde G (Chapter 9. page 101 step 2)
      */
-#pragma omp parallel for num_threads(n_threads) schedule(static)
+#pragma omp parallel for num_threads(n_threads) schedule(static) collapse(2)
     for (size_t i = from; i < to; i++) {
         for (size_t j = 0; j < m; j++) {
             bt[i][j] = bt[i][j] / (diag[i] + diag[j]);
@@ -235,7 +219,6 @@ int main(int argc, char **argv)
     /*
      * Compute U = S^-1 * (S * Utilde^T) (Chapter 9. page 101 step 3)
      */
-// TODO
 #pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = from; i < to; i++) {
       fst_(bt[i], &n, z[omp_get_thread_num()], &nn);
@@ -243,7 +226,6 @@ int main(int argc, char **argv)
 
     transpose(b, bt, m);
 
-// TODO
  #pragma omp parallel for num_threads(n_threads) schedule(static)
     for (size_t i = from; i < to; i++) {
       fstinv_(b[i], &n, z[omp_get_thread_num()], &nn);
@@ -256,7 +238,7 @@ int main(int argc, char **argv)
      */
     double u_max = 0.0;
 
-// TODO Doesn't these two do the same? One with omp, other with MPI?
+// TODO Doesn't these two do the same? One with omp, other with MPI? Check this
 #pragma omp parallel for num_threads(n_threads) reduction(max: u_max)
     for (size_t i = from; i < to; i++) {
         for (size_t j = 0; j < m; j++) {
@@ -265,44 +247,44 @@ int main(int argc, char **argv)
     }
     double u_max_after_reduce = 0.0;
     MPI_Allreduce(&u_max, &u_max_after_reduce, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
+
     if(mpi_rank == 0){
         printf("u_max = %e\n", u_max_after_reduce);
     }
-    //Calculating error from appendix B
-    // Global max and my max
+
+    //Calculating error, from appendix B
     double maxerr = 0.0;
 
-    // Calculate local max error
     for (int i = from; i < to; i++)
     {
     	for (int j = 0; j < m; j++)
     	{
     		real error = fabs(answer(grid[i+1], grid[j+1]) - b[i][j]);
-        maxerr = maxerr > error ? maxerr : error;
+            maxerr = maxerr > error ? maxerr : error;
     	}
     }
     double error_u_max = 0.0;
     MPI_Allreduce (&maxerr, &error_u_max, 1, MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD);
 
-    if (mpi_rank == 0){
+    if(mpi_rank == 0){
       printf ("Largest error encountered: %e\n", error_u_max);
     }
 
+    // Completed time
     if(mpi_rank == 0){
         double time_final = MPI_Wtime() - time1;
         printf("Time: %f\n", time_final);
     }
 
-    MPI_Finalize ();
-    return 0;
-
     free(sendcounts);
     free(recvcounts);
     free(rdispls);
     free(sdispls);
-    free (fromarray);
-    free (toarray);
-    free (adderarray);
+    free(from_proc);
+    free(to_proc);
+    MPI_Finalize ();
+    return 0;
+
 }
 
 /*
@@ -311,8 +293,11 @@ int main(int argc, char **argv)
  */
 
 real rhs(real x, real y) {
-    return 2 * (y - y*y + x - x*x);
+    //return 2 * (y - y*y + x - x*x);
+    return 5.0 * PI * PI * sin (PI * x) * sin (2.0 * PI * y);
 }
+
+// the exact solution, provided in appendix B
 real answer(real x, real y) {
     return sin(PI * x) * sin(2 * PI * y);
 }
@@ -324,32 +309,7 @@ real answer(real x, real y) {
 // Denne er viktig, her er alt i loopen i samme prosess, vær nøye her. Må flippes, transponereres
 void transpose(real **bt, real **b, size_t m)
 {
-/*
-  for (size_t i = 0; i < m; i++) {
-      for (size_t j = 0; j < m; j++) {
-          bt[i][j] = b[j][i];
-      }
-  }
-*/
-
     MPI_Alltoallv( b[0], sendcounts, sdispls, MPI_DOUBLE, bt[0], recvcounts, rdispls, m_columntype, MPI_COMM_WORLD );
-
-    //jallaversjon
-    /*
-    int i, j, row, col;
-    int blocksize = 16;
-
-    #pragma omp parallel for private(i, j, row, col) schedule(static, 2)
-    for (i = 0; i < m; i += blocksize) {
-        for (j = 0; j < m; j += blocksize) {
-            for (row = i; row < i + blocksize && row < m; row++) {
-                for (col = j; col < j + blocksize && col < m; col++) {
-                    bt[row][col] = b[col][row];
-                }
-            }
-        }
-    }*/
-
 }
 
 

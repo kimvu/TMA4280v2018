@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/poisson.c" "/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/poisson.dir/poisson.c.o"
+  "/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/poisson.c" "/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/poisson.dir/poisson.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -24,7 +24,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/shomed/k/kimlv/Desktop/Superdatamaskin/TMA4280v2018/P2/parallell/CMakeFiles/common.dir/DependInfo.cmake"
+  "/home/shomed/m/mehaugaa/Desktop/progs/TMA4280v2018/P2/parallell/CMakeFiles/common.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
