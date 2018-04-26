@@ -83,6 +83,11 @@ int main(int argc, char **argv)
     int m = n - 1;
     real h = 1.0 / n;
 
+    // Printing number of processes and threads
+    if(mpi_rank == 0){
+        printf("\nProcesses: %d. Threads: %d. N: %d\n", mpi_size, n_threads, n);
+    }
+
     // Allocating memory, for load balancing
     from_proc = (int*) malloc (mpi_size * sizeof (int));
     to_proc = (int*) malloc (mpi_size * sizeof (int));
